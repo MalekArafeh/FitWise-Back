@@ -12,12 +12,21 @@
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
+<<<<<<< HEAD
       href="{{asset('admin/plugins/fontawesom-free/css/all.min.css')}}"
     />
     <!-- fullCalendar -->
     <link rel="stylesheet" href="{{asset('admin/plugins/fullcalendar/main.css')}}" />
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('admin/dist/css/adminlte.min.css')}}" />
+=======
+      href="{{asset('css/all.min.css')}}"
+    />
+    <!-- fullCalendar -->
+    <link rel="stylesheet" href="{{asset('css/main.css')}}" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{asset('css/adminlte.min.css')}}" />
+>>>>>>> 753b3d4 (css for schedule page)
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
