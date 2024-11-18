@@ -12,12 +12,12 @@
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
-      href="/Admin/plugins/fontawesome-free/css/all.min.css"
+      href="{{asset('css/all.min.css')}}"
     />
     <!-- fullCalendar -->
-    <link rel="stylesheet" href="/Admin/plugins/fullcalendar/main.css" />
+    <link rel="stylesheet" href="{{asset('css/main.css')}}" />
     <!-- Theme style -->
-    <link rel="stylesheet" href="/Admin/dist/css/adminlte.min.css" />
+    <link rel="stylesheet" href="{{asset('css/adminlte.min.css')}}" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
