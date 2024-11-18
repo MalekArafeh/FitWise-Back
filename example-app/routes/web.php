@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('user/Registration');
+    return view('test');
 });
 
 Route::get('/test', [TestController::class, 'firstAction']);
