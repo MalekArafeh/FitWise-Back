@@ -9,10 +9,10 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
     />
-    <!-- Font Awesome -->
+    <!-- Font Awesome example-app/public/admin/plugins/fontawesome-free/css/all.min.css-->
     <link
       rel="stylesheet"
-      href="{{asset('admin/plugins/fontawesom-free/css/all.min.css')}}"
+      href="{{url('admin/plugins/fontawesome-free/css/all.min.css')}}"
     />
     <!-- fullCalendar -->
     <link rel="stylesheet" href="{{asset('admin/plugins/fullcalendar/main.css')}}" />
@@ -215,8 +215,8 @@
     <!-- fullCalendar 2.2.5 -->
     <script src="{{asset('admin/plugins/moment/moment.min.js')}}"></script>
     <script src="{{asset('admin/plugins/fullcalendar/main.js')}}"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="{{asset('admin/dist/js/demo.j')}}s"></script>
+    <!-- AdminLTE for demo purposes-->
+    <script src="{{asset('admin/dist/js/demo.j')}}">
     <!-- Page specific script -->
     <script>
       $(function () {
