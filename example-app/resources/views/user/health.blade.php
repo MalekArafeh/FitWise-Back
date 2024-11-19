@@ -102,7 +102,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="/profile-user/index.html"
+                    <a class="dropdown-item" href="{{url('/profile')}}"
                       >Profile</a
                     >
                   </li>
@@ -110,7 +110,7 @@
                   <li><a class="dropdown-item" href="#">Language</a></li>
                   <li><hr class="dropdown-divider" /></li>
                   <li>
-                    <a class="dropdown-item red-text" href="#">Sign out</a>
+                    <a class="dropdown-item red-text" href="{{url('/login')}}">Sign out</a>
                   </li>
                 </ul>
               </li>

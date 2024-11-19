@@ -10,7 +10,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="{{ asset('user/css/root.css') }}" >
+    <link rel="stylesheet" href="{{asset('user/root.css')}}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,10 +29,12 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="{{asset('user/style.css')}}">
   </head>
   <body>
     <!--nav bar wave design-->
-    <section class="sticky">
+    <section>
+    <section>
       <svg class="svg-bg" viewBox="0 0 500 200">
         <path
           d="M 0 50 C 150 100 350 0 500 40 L 500 0 L 0 0 Z"
@@ -97,12 +99,10 @@
                     >
                   </li>
                   <li><a class="dropdown-item" href="#">About us</a></li>
-                  <li><a class="dropdown-item" href="#">Language</a></li>
+                  <li><a class="dropdown-item" href="#">Lanhuage</a></li>
                   <li><hr class="dropdown-divider" /></li>
                   <li>
-                    <a class="dropdown-item red-text" href="{{url('/login')}}"
-                      >Sign out</a
-                    >
+                    <a class="dropdown-item red-text" href="{{url('/login')}}">Sign out</a>
                   </li>
                 </ul>
               </li>
@@ -128,95 +128,29 @@
     <!--end nav bar-->
 
     <!--page content-->
-    <section class="status">
-      <div><i class="fa-solid fa-dumbbell status-icon"></i></div>
-      <br />
-      <div class="full bar">
-        <div class="busyness bar"></div> 
-      </div>
-    </section>
-
-    <br />
-    <section class="margin-top">
-      <div class="row">
-        <div class="col-md-5 col-11 radial center-block">
-          <span class="headings col">Memberships</span>
-          <div class="row">
-            <div class="col-8">
-              <div class="dark-border row">
-                <span class="headings">Pool Membership</span>
-                <br />
-                <span class="text"
-                  ><i class="fa-solid fa-calendar blk-text"></i> Expires on
-                  11/10/2024</span
-                >
-              </div>
-            </div>
-            <div class="col center-left">
-              <button class="btn btn-warning">View</button>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-8">
-              <div class="dark-border row">
-                <span class="headings">Gym Membership</span>
-                <br />
-                <span
-                  ><i class="fa-solid fa-triangle-exclamation red-text"></i>
-                  Expired</span
-                >
-              </div>
-            </div>
-            <div class="col center-left">
-              <button class="btn btn-danger">View</button>
-            </div>
-          </div>
+    <div class="container d-flex justify-content-center ">
+      <div class="box ">
+        <div class="details d-flex justify-content-center">
+          <img src="profile.jpg" alt=""> 
+          <div class=" mt-5">First name last name</div> 
         </div>
-        <div class="col-md-5 col-11 radial center-block">
-          <div class="row">
-            <span class="headings col">Upcoming Classes</span>
-            <a
-              href="{{asset('/schedule')}}"
-              class="col center-left blk-text text"
-              ><i
-                class="fa-solid fa-calendar blk-text"
-                style="margin-right: 5px"
-              ></i>
-              See full schedule</a
-            >
-          </div>
-          <div class="dark-border row">
-            <div class="col-8">
-              <span class="headings">Body Combat with Coach Naser</span>
-              <br />
-              <span class="text"
-                >From 5:00 PM to 6:00 PM - Main GGX studio</span
-              >
-            </div>
-            <span class="col text center-left">Today</span>
-          </div>
-          <div class="dark-border row">
-            <div class="col-8">
-              <span class="headings">Kick Boxing with coach Tamara</span>
-              <br />
-              <span class="text"
-                >from 2:00 PM to 3:00 PM - Mind and Body studio</span
-              >
-            </div>
-            <span class="col text center-left">Tomorrow</span>
-          </div>
+        
+        <div class="d-flex  justify-content-center pt-5">
+          
+        <div class="weight p-3">
+          current Weight: <br>XX Kg
         </div>
+        <div class="height p-3">Current height <br> XXX Cm </div>
       </div>
-    </section>
-    <br />
-    <section>
-      <div class="banner center-block">
-        <img src="{{asset('img/promo2.png')}}" alt="" class="banner-img" />
-      </div>
-    </section>
-    <!--end page content-->
 
-    <!--footer-->
+      <div class="email text-center">Email: example@fitwise.com </div> 
+    <div class="buttons d-flex justify-content-center mt-5">
+      <button type="button" class="btn btn-warning mb-2"><a class="nav-link p-1" href="">Edit</a></button>
+      <button type="button" class="btn btn-warning mb-2"><a class="nav-link p-1" href="">Save</a></button>
+
+    </div>  </div>
+    </div>
+   
     <footer class="linear-bottom-top">
       <p class="headings blk-text">contacts</p>
       <div>
@@ -254,6 +188,26 @@
       <span class="center-block">
         <img
           src="{{asset('img/logo.svg')}}"
+          alt=""
+          class="hide-on-lg"
+        />
+      </span>
+    </footer>
+   
+    <!--end page content-->
+
+    <!--footer-->
+    <!--<footer class="linear-bottom-top">
+      
+      
+
+      
+
+      
+      
+      <span class="center-block">
+        <img
+          src="/assets/Green Modern Fitness App Logo (6) 2-2.svg"
           alt=""
           class="hide-on-lg"
         />
