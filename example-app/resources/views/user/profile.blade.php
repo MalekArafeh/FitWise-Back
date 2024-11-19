@@ -131,7 +131,7 @@
     <div class="container d-flex justify-content-center ">
       <div class="box ">
         <div class="details d-flex justify-content-center">
-          <img src="profile.jpg" alt=""> 
+          <img src="{{asset('img/profile.jpg')}}" alt=""> 
           <div class=" mt-5">First name last name</div> 
         </div>
         
