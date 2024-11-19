@@ -19,7 +19,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="{{asset('user/root.css')}}" />
+    <link rel="stylesheet" href="{{asset('user/css/root.css')}}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -324,7 +324,7 @@
     <!--end footer-->
 
     @section('scripts')
-    <script src="{{asset('user/script.js')}}"></script>
+    <script src="{{asset('user/js/script.js')}}"></script>
     <script
       src="https://kit.fontawesome.com/d2ac08e343.js"
       crossorigin="anonymous"

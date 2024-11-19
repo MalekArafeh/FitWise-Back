@@ -12,19 +12,19 @@
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
-      href="{{asset('css/all.min.css')}}"
+      href="{{asset('admin/plugins/fontawesom-free/css/all.min.css')}}"
     />
     <!-- fullCalendar -->
-    <link rel="stylesheet" href="{{asset('css/main.css')}}" />
+    <link rel="stylesheet" href="{{asset('admin/plugins/fullcalendar/main.css')}}" />
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{asset('css/adminlte.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('admin/dist/css/adminlte.min.css')}}" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="{{asset('user/root.css')}}" />
+    <link rel="stylesheet" href="{{asset('user/css/root.css')}}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -199,18 +199,24 @@
       crossorigin="anonymous"
     ></script>
     <!-- jQuery -->
-    <script src="/Admin/plugins/jquery/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- jQuery -->
+    <script src="{{asset('admin/plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap -->
-    <script src="/Admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- jQuery UI -->
-    <script src="/Admin/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="{{asset('admin/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
     <!-- AdminLTE App -->
-    <script src="/Admin/dist/js/adminlte.min.js"></script>
+    <script src="{{asset('admin/dist/js/adminlte.min.js')}}"></script>
     <!-- fullCalendar 2.2.5 -->
-    <script src="/Admin/plugins/moment/moment.min.js"></script>
-    <script src="/Admin/plugins/fullcalendar/main.js"></script>
+    <script src="{{asset('admin/plugins/moment/moment.min.js')}}"></script>
+    <script src="{{asset('admin/plugins/fullcalendar/main.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="/Admin/dist/js/demo.js"></script>
+    <script src="{{asset('admin/dist/js/demo.j')}}s"></script>
     <!-- Page specific script -->
     <script>
       $(function () {
