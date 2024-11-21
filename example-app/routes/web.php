@@ -1,14 +1,14 @@
 <?php
 
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
+
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Admin_profile_page', function () {
-    return view('admin/Admin_profile_page');
-});
+Route::get('/Admin_profile_page', [TestController::class , 'testAction'] );
 
 Route::get('/classes', function () {
     return view('admin/classes');

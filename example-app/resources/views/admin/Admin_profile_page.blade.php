@@ -222,17 +222,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="text-center">
                   <img class="profile-user-img img-fluid img-circle" src="{{ asset('img/yazan.jpg') }}" alt="User profile picture">
                 </div>
-                <h3 class="profile-username text-center">Yazan Masafeh</h3>
-                <p class="text-muted text-center">Gym Admin</p>
+                <h3 class="profile-username text-center">{{$post['name']}}</h3>
+                <p class="text-muted text-center">{{$post['role']}}</p>
                 <ul class="list-group list-group-unbordered mb-3">
                   <li class="list-group-item">
-                    <b>Username</b> <a class="float-right">yazan_m</a>
+                    <b>Username</b> <a class="float-right">{{$post['username']}}</a>
                   </li>
                   <li class="list-group-item">
-                    <b>Contact no.</b> <a class="float-right">0774394876</a>
+                    <b>Contact no.</b> <a class="float-right">{{$post['contactNum']}}</a>
                   </li>
                   <li class="list-group-item">
-                    <b>Email Address:</b> <a class="float-right">yazanmjbfd@gmail.com</a>
+                    <b>Email Address:</b> <a class="float-right">{{$post['email']}}</a>
                   </li>
                 </ul>
                 <a href="#" class="btn btn-block btn-warning"><b>Update</b></a>
