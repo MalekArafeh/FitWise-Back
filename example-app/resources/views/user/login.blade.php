@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{url('user/css/login.css') }}">
 
+
 <style>
         
 
@@ -39,19 +40,13 @@
    </div>
 
 
-  <script async>
-    let image=document.getElementById("image");
-    let images=["{{ asset('img/login/sport3.jpg') }}","{{ asset('img/login/sport1.jpg') }}","{{ asset('img/login/sport2.jpg') }}","{{ asset('img/login/sport0.png') }}"];
-    
-    setInterval(function(){
-
-        let rnd = Math.floor(Math.random() * images.length);
-        image.src=images[rnd];
-    },2000);
-
+<script async>
+ let image=document.getElementById("image");
+let images=["{{ asset('img/login/sport3.jpg') }}","{{ asset('img/login/sport1.jpg') }}","{{ asset('img/login/sport2.jpg') }}","{{ asset('img/login/sport0.png') }}"];
 
   </script>  
-  
+
+<script src="{{ asset('/user/js/login.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
