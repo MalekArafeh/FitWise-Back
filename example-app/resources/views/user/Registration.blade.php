@@ -312,23 +312,8 @@
           />
         </span>
       </footer>
-<script>
-  let popup=document.getElementById("popup");
 
-
-  function openPopup(){
-    popup.classList.add("openPopup");
-    document.body.classList.add("no-scroll"); // Disable scroll
-
-  }
-  function closePopup(){
-    popup.classList.remove("openPopup");
-    document.body.classList.remove("no-scroll"); // Disable scroll
-
-  }
-</script>
-
-
+    <script src="{{ asset('user/js/Registration.js') }}"></script>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
