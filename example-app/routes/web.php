@@ -1,14 +1,18 @@
 <?php
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\LoginController;
+
+
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('user/Registration');
-});
 
-Route::get('/test', [TestController::class, 'firstAction']);
 
-Route::get('/login',function () {
-    return view('user/login');
-});
+
+
+Route::Get('/',[RegistrationController::class, 'index']);
+
+Route::get('/login',[LoginController::class,'index']);
+
+
