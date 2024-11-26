@@ -8,6 +8,7 @@ class Notification extends Model
 {
     //
 
+    protected $fillable = ['notType', 'notDate','notTime'];
 
 
     protected $table = 'notification';

@@ -15,4 +15,6 @@ Route::Get('/',[RegistrationController::class, 'index']);
 
 Route::get('/login',[LoginController::class,'index']);
 
+Route::post('/',[RegistrationController::class, 'store']);
+
 

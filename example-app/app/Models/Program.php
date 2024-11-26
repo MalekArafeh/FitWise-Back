@@ -9,8 +9,9 @@ class Program extends Model
     //
 
 
+    protected $fillable = ['program_ID', 'program_Name','program_Weights','program_Repeat'];
 
 
-    protected $table = 'product';
+    protected $table = 'program';
 
 }
