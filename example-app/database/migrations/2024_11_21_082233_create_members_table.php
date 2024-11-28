@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('mem_phone');
             $table->string('mem_mail')->unique();
             $table->string('mem_height');
-            $table->string('mem_width');
-            $table->string('mem_photo',255);
+            $table->string('mem_weight');
+            $table->string('mem_photo', 255);
             $table->string('mem_password');
             $table->string('mem_substatus');
             $table->date('date_of_join');
