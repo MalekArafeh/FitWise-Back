@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class TestController extends Controller
 {
     public function firstAction (){
-        return view(view: 'test'); 
+        return view(view: 'admin/test'); 
     }
 }

@@ -12,10 +12,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="plugins/fontawesome-fee/css/all.min.css">
+  <link rel="stylesheet" href="{{url('admin/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset(path: 'css/adminlte.min.css') }}" />
-  <link rel="stylesheet" href="{{url('css/custom.css') }}">
+  <link rel="stylesheet" href="{{url('admin/css/adminlte.min.css') }}">
+  <link rel="stylesheet" href="{{url('admin/css/custom.css') }}">
 
 
 
@@ -108,7 +108,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{ asset('img/yazan.jpg') }}" class="img-circle elevation-2" alt="User Image">
+          <img src="{{ url('img/yazan.jpg') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="Admin_Profile_Page.html" class="d-block">Yazan Masafeh</a>
@@ -283,10 +283,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="{{url('admin/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{url('admin/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="{{url('admin/dist/js/adminlte.min.js')}}"></script>
 </body>
 </html>
