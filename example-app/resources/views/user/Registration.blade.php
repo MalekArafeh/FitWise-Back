@@ -62,7 +62,8 @@
           Start a better shape of you!<span><br>Come Join Us!</span>
            </p>
           <button type="button" class="btn btn-warning mt-4" onclick="openPopup()">Register</button>
-          <div class="popup" id="popup">
+          TODO: implement registration from user registration page in phase 2 with payment
+          {{-- <div class="popup" id="popup">
             <div class="popup-cuntentmm">
 
               <img src="{{ asset('img/Registration/Green Modern Fitness App Logo (6) .png') }}" alt="">
@@ -103,7 +104,7 @@
 
               
             </div>
-          </div>
+          </div> --}}
        
         
          

@@ -107,41 +107,31 @@
               <div class="popupmm">
                 <div class="popup-cuntentmm">
                   <h4>Add Member</h4>
-                  <form action="">
+                  <form action="{{route('admin.members.store')}}" method="POST">
+                    @csrf
                     <div class="popupform">
                     <div>
                         <label for="">Name</label>
-                        <input type="text" class="inputpopup" placeholder="Enter name">
+                        <input name="mem_name" type="text" class="inputpopup" placeholder=" Enter member name">
+                        <label for="">Phone number</label>
+                        <input name="mem_phone" type="tel" class="inputpopup" placeholder=" Enter phone number">
                         <label for="">Email</label>
-                        <input type="text" class="inputpopup" placeholder="Enter Email">
-
+                        <input name="mem_mail" type="mail" class="inputpopup" placeholder=" Enter email">                     
                     </div>
                     <div>
-                        <label for="">Date Enrolled</label>
-                        <input type="text" class="inputpopup" placeholder="Enter Date Enrolled ">
-                        <label for="">Date Expiration</label>
-                        <input type="text" class="inputpopup" placeholder="Enter Date Expiration">
-
+                      <label for="">Date Enrolled</label>
+                        <input name="date_of_join" type="date" class="inputpopup" placeholder=" Enter date">
+                        <label for="">Expiration date</label>
+                        <input name="expiration_date" type="date" class="inputpopup" placeholder=" Enter date">
+                        <label for="">Password</label>
+                        <input name="mem_password" type="password" class="inputpopup" >
+                        <div style=" margin-top: 20px; text-align: right;">
+                          <button class="edit-btn">Add Member</button>
+                          <button class="butformcancel" id="close">cancel</button>
+                        </div>
                     </div>
                 </div>
-                <div class="popupform">
-                 
-                    <div>
-                        <br>
-                        <button class="edit-btn">Add Member</button>
-                        <button class="butformcancel" id="close">cancel</button>
-                    </div>
-                </div>
-             
 
-                  
-
-                  </form>
-                  
-
-                  
-                </div>
-              </div>
 
 
               <div class="popupmmEdit">

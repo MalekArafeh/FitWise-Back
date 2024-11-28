@@ -23,9 +23,7 @@ return new class extends Migration
             $table->string('mem_password');
             $table->string('mem_substatus');
             $table->date('date_of_join');
-
-
-
+            $table->date('expiration_date');
             $table->timestamps();
         });
     }
