@@ -67,20 +67,21 @@
 
               <img src="{{ asset('img/Registration/Green Modern Fitness App Logo (6) .png') }}" alt="">
               <h4>Register</h4>
-              <form action="">
+              <form action="/" method="POST">
+               @csrf
                 <div class="popupform">
                 <div>
                     <label for="">First Name</label>
-                    <input type="text" class="inputpopup">
+                    <input type="text" name="mem_name" class="inputpopup">
                     <label for="">Last Name</label>
                     <input type="text" class="inputpopup">
 
                 </div>
                 <div>
                     <label for="">Email</label>
-                    <input type="email" class="inputpopup">
+                    <input type="email" name='mem_mail'class="inputpopup">
                     <label for="">Phone</label>
-                    <input type="number" class="inputpopup">
+                    <input type="TEL" name='mem_phone' class="inputpopup">
 
                 </div>
             </div>
@@ -88,7 +89,7 @@
                 
                 <div>
                     <br>
-                    <button type="button" class="btn btn-light butsub" >Submit </button>
+                    <button type="submit" class="btn btn-light butsub" >Submit </button>
                     <button type="button" class="btn btn-light butformcancel" id="close" onclick="closePopup()">Cancel </button>
 
                 </div>
