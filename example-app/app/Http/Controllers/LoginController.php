@@ -21,8 +21,8 @@ class LoginController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required', 'min:8'],
         ]);
-        $cridintials = $request->only('email', 'password');
-        if (Auth::attempt($cridintials)) {
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->route('user.home')->with('success', 'You have been logged in!');
         }
