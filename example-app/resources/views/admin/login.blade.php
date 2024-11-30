@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login-User</title>
+    <title>Login-Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,13 +24,12 @@
     <div class="div text-center">
     <img src="{{ asset('img/login/Green Modern Fitness App Logo (6) .png') }}" class="img-circle elevation-2" alt="User Image">
 
-        <div class="div2">LOGIN TO FITWISE</div>
-        <form action="{{route('user.login')}}" method="POST">
-          @csrf
-        <input type="email" id="email" name="email" class="mb-4 mt-4" placeholder="Email"  required><br>
+        <div class="div2">LOGIN TO DASHBOARD</div>
+        <input type="email" id="email" name="email"class="mb-4 mt-4" placeholder="Email"  required><br>
         <input type="password" id="password" name="password" placeholder="Password" required><br>
-        <button class="btn btn-warning mt-4">Login</button>
-      </form>
+
+        <button type="button" class="btn btn-warning mt-4"><a class="nav-link" href="../User/home_page/home.html">Login</a></button>
+
     </div>
     <div class="div1 d-flex justify-content-center">
 

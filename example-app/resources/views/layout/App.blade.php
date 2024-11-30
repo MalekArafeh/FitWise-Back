@@ -148,7 +148,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
-                <a href="Members_Page.html" class="nav-link">
+                <a href="{{route('admin.members.index')}}" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
                   <p>
                     Members

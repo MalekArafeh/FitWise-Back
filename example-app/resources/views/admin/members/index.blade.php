@@ -107,16 +107,16 @@
               <div class="popupmm">
                 <div class="popup-cuntentmm">
                   <h4>Add Member</h4>
-                  <form action="{{route('admin.members.store')}}" method="POST">
+                  <form action="{{route('admin.add_member.store')}}" method="POST">
                     @csrf
                     <div class="popupform">
                     <div>
                         <label for="">Name</label>
-                        <input name="mem_name" type="text" class="inputpopup" placeholder=" Enter member name">
+                        <input name="name" type="text" class="inputpopup" placeholder=" Enter member name">
                         <label for="">Phone number</label>
-                        <input name="mem_phone" type="tel" class="inputpopup" placeholder=" Enter phone number">
+                        <input name="phone" type="tel" class="inputpopup" placeholder=" Enter phone number">
                         <label for="">Email</label>
-                        <input name="mem_mail" type="mail" class="inputpopup" placeholder=" Enter email">                     
+                        <input name="email" type="mail" class="inputpopup" placeholder=" Enter email">                     
                     </div>
                     <div>
                       <label for="">Date Enrolled</label>
@@ -124,7 +124,7 @@
                         <label for="">Expiration date</label>
                         <input name="expiration_date" type="date" class="inputpopup" placeholder=" Enter date">
                         <label for="">Password</label>
-                        <input name="mem_password" type="password" class="inputpopup" >
+                        <input name="password" type="password" class="inputpopup" >
                         <div style=" margin-top: 20px; text-align: right;">
                           <button class="edit-btn">Add Member</button>
                           <button class="butformcancel" id="close">cancel</button>
@@ -192,3 +192,4 @@
 
     <script src={{url('admin\members.js')}}></script>
 @endsection
+

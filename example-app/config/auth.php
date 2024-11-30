@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'gym_members' => [
+            'driver' => 'session', // Use session-based authentication
+            'provider' => 'gym_members', // Reference the members provider
+        ],
     ],
 
     /*
@@ -63,6 +68,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => env('AUTH_MODEL', App\Models\User::class),
+        ],
+
+        'gym_members' => [
+            'driver' => 'eloquent', // Use Eloquent ORM
+            'model' => App\Models\GymMember::class, // Reference your Member model
         ],
 
         // 'users' => [
