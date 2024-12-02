@@ -28,6 +28,8 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/admin/members', [MemberRegController::class, 'index'])->name('admin.members.index');
 Route::get('/admin/members', [GymMemberController::class, 'index'])->name('admin.members.index');
+route::put('admin/members/{id}',[GymMemberController::class, 'update'])->name('admin.members.update');
+Route::get('/admin/members/{id}/edit',[GymMemberController::class, 'edit'])->name('admin.members.edit');
 Route::post('/admin/members', [MemberRegController::class, 'store'])->name('admin.members.store');
 Route::post('/admin/members', [GymMemberController::class, 'store'])->name('admin.add_member.store');
 

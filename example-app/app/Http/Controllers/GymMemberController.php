@@ -14,8 +14,9 @@ class GymMemberController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        return view("admin.members.index");
+    { 
+        $members=GymMember::all();
+        return view("admin.members.index",['gym_members'=>$members]);
     }
 
     /**
@@ -29,6 +30,7 @@ class GymMemberController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    
     public function store(Request $request)
     {
         $attributes = request()->validate([
@@ -76,15 +78,33 @@ class GymMemberController extends Controller
      */
     public function edit(GymMember $gymMember)
     {
-        //
+        $member=GymMember::find($gymMember->id);
+        return view('admin.members.edit',['member'=> $member]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, GymMember $gymMember)
+    public function update(Request $request, $member_id)
     {
-        //
+      
+        $edit_member=GymMember::find( $member_id);
+        $attributes = request()->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'phone' => ['required', 'max:10', 'min:10'],          
+            'date_of_join' => ['required', 'date'],
+            'expiration_date' => ['required', 'date'],
+        ]);
+        $edit_member->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,       
+            'date_of_join' => $request->date_of_join,
+            'expiration_date' => $request->expiration_date,
+        ]);
+      
+        return to_route("admin.members.index");
     }
 
     /**
