@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('recieve', function (Blueprint $table) {
             $table->id();
             $table->foreignId('mem_ID')
-            ->constrained('members','mem_ID')
-            ->onDelete('cascade');
+                ->constrained('gym_members', 'id')
+                ->onDelete('cascade');
 
             $table->foreignId('not_ID')
-            ->constrained('notification','not_ID')
-            ->onDelete('cascade');
+                ->constrained('notification', 'not_ID')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

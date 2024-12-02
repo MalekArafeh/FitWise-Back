@@ -16,11 +16,8 @@ return new class extends Migration
             $table->string('trainer_name');
             $table->string('trainer_mail')->unique();
             $table->string('trainer_phone');
-            $table->string('trainer_availability',10);
-            $table->foreignId('class_ID')
-            ->constrained('classes','class_ID')
-            ->onDelete('cascade');
-           
+            $table->string('trainer_availability', 10);
+
             $table->timestamps();
         });
     }
