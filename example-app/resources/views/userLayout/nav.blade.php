@@ -60,7 +60,7 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="{{url('/profile')}}"
+                  <a class="dropdown-item" href="{{ route('profile.show', ['id' => Auth::guard('gym_members')->user()->id]) }}"
                     >Profile</a
                   >
                 </li>
@@ -90,4 +90,6 @@
       </div>
     </nav>
     <span class="headings" id="greeting">Hello user</span>
+    {{-- <span class="headings" id="greeting">Hello {{$gym_member->name}}</span> --}}
+
 </header>
