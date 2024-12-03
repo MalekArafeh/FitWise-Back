@@ -40,25 +40,6 @@ route::put('admin/plan/{id}',[GymMemberController::class, 'update'])->name('admi
 Route::get('/admin/mem/{id}/edit',[GymMemberController::class, 'edit'])->name('admin.members.edit');
 Route::post('/admin/members', [MemberRegController::class, 'store'])->name('admin.members.store');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Route::Get('/', [RegistrationController::class, 'index']);
 
 Route::get('/Admin_profile_page', [TestController::class, 'testAction']);
