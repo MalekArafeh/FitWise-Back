@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('recieve', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('mem_ID')
-            ->constrained('members','mem_ID')
+            $table->foreignId('mem_id')
+            ->constrained('gym_members','id')
             ->onDelete('cascade');
 
             $table->foreignId('not_ID')
@@ -22,7 +22,7 @@ return new class extends Migration
             ->onDelete('cascade');
             $table->timestamps();
         });
-    }
+    }  
 
     /**
      * Reverse the migrations.

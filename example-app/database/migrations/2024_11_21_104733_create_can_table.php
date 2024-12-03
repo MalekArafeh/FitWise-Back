@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('can', function (Blueprint $table) {
             $table->id();
             $table->foreignId('mem_ID')
-            ->constrained('members','mem_ID')
+            ->constrained('gym_members','id')
             ->onDelete('cascade');
 
             $table->foreignId('sub_ID')

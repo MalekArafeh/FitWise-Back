@@ -59,7 +59,9 @@ class GymMemberController extends Controller
         ]);
         if (Auth::guard('gym_members')->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/home');
+            $userId = Auth::guard('gym_members')->user()->id;
+
+            return redirect()->Route('home',['id' => $userId]);
         }
         return redirect("/login")->withError('Oppes! You have entered invalid credentials');
     }
