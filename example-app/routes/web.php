@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\GymPlanController;
 
 use App\Http\Controllers\GymMemberController;
 use App\Http\Controllers\HealthController;
@@ -25,6 +26,24 @@ Route::get('/admin/members', [GymMemberController::class, 'index'])->name('admin
 Route::put('admin/members/{id}',[GymMemberController::class, 'update'])->name('admin.members.update');
 Route::get('/admin/members/{id}/edit',[GymMemberController::class, 'edit'])->name('admin.members.edit');
 Route::post('/admin/members', [GymMemberController::class, 'store'])->name('admin.add_member.store');
+Route::delete('/admin/members/{id}', [GymMemberController::class, 'destroy'])->name('admin.member.destroy');
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Route::get('/admin/plan', [GymPlanController::class, 'index'])->name('admin.plan.index');
+route::put('admin/plan/{id}',[GymMemberController::class, 'update'])->name('admin.members.update');
+Route::get('/admin/mem/{id}/edit',[GymMemberController::class, 'edit'])->name('admin.members.edit');
+Route::post('/admin/members', [MemberRegController::class, 'store'])->name('admin.members.store');
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Admin profile: 
 // Route::get('/Admin_profile_page', [TestController::class, 'testAction']);
@@ -45,6 +64,10 @@ Route::post('/login', [GymMemberController::class, 'postLogin'])->name('user.log
 // Route::post('/', [RegistrationController::class, 'store']);
 
 Route::view('/health', 'user.health');
-Route::view('/home', 'user.home');
+Route::view('/home/{id}', 'user.home')->name('home');
 Route::view('/schedule', 'user.schedule');
-Route::view('/profile', 'user.profile');
+Route::get('/profile', [ProfileController::class,'index']);
+Route::get('/profile/{id}', [ProfileController::class, 'index'])->name('profile.show');
+Route::put('/profile/{id}', [ProfileController::class, 'update'])->name('profile.update');
+
+
