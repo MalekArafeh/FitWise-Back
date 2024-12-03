@@ -24,7 +24,7 @@ class GymMemberController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -76,11 +76,13 @@ class GymMemberController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(GymMember $gymMember)
+    public function edit( $id)
     {
-        $member=GymMember::find($gymMember->id);
+        $member=GymMember::find($id);
         return view('admin.members.edit',['member'=> $member]);
     }
+
+
 
     /**
      * Update the specified resource in storage.
@@ -103,15 +105,18 @@ class GymMemberController extends Controller
             'date_of_join' => $request->date_of_join,
             'expiration_date' => $request->expiration_date,
         ]);
-      
+        
+
+      $edit_member->save();
         return to_route("admin.members.index");
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(GymMember $gymMember)
+    public function destroy($id )
     {
-        //
+        GymMember::find($id)->delete();
+        return to_route("admin.members.index");
     }
 }
