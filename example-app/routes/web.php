@@ -27,22 +27,12 @@ Route::put('admin/members/{id}',[GymMemberController::class, 'update'])->name('a
 Route::get('/admin/members/{id}/edit',[GymMemberController::class, 'edit'])->name('admin.members.edit');
 Route::post('/admin/members', [GymMemberController::class, 'store'])->name('admin.add_member.store');
 Route::delete('/admin/members/{id}', [GymMemberController::class, 'destroy'])->name('admin.member.destroy');
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// plans: 
 Route::get('/admin/plan', [GymPlanController::class, 'index'])->name('admin.plan.index');
 route::put('admin/plan/{id}',[GymMemberController::class, 'update'])->name('admin.members.update');
 Route::get('/admin/mem/{id}/edit',[GymMemberController::class, 'edit'])->name('admin.members.edit');
 Route::post('/admin/members', [MemberRegController::class, 'store'])->name('admin.members.store');
-
-
-
-
-
-
-
-
-
-
-
 
 
 // Admin profile: 
