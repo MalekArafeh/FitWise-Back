@@ -13,13 +13,19 @@ return new class extends Migration
     {
         Schema::create('recieve', function (Blueprint $table) {
             $table->id();
+<<<<<<< HEAD
             $table->foreignId('mem_id')
             ->constrained('gym_members','id')
             ->onDelete('cascade');
+=======
+            $table->foreignId('mem_ID')
+                ->constrained('gym_members', 'id')
+                ->onDelete('cascade');
+>>>>>>> 3348a7f9f6fef3e4b5e230393e947007086ca25e
 
             $table->foreignId('not_ID')
-            ->constrained('notification','not_ID')
-            ->onDelete('cascade');
+                ->constrained('notification', 'not_ID')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }  

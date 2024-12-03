@@ -54,6 +54,18 @@
             align-items: center;
             visibility: hidden;
         }
+        .popupmmEditpage{
+            
+            background: rgba(218, 18, 18, 0.6);
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
         .popup-cuntentmm{
             width: 600px;
             height: 300px;
