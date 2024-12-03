@@ -2,14 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Gym extends Model
+
+class Gym extends Authenticatable
 {
     //
     protected $fillable = ['gym_name',
                          'gym_description',
-                         'gym_rate'
+                         'gym_rate',
+                         'password'
                         ,'gym_location'
                         ,'gym_photos'
                         ,'gym_mail'

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('gym', function (Blueprint $table) {
             $table->id();
             $table->string('gym_name');
+            $table->string('password');
             $table->string('gym_description');
             $table->string('gym_rate');
             $table->string('gym_location');
