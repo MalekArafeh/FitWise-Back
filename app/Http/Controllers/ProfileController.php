@@ -31,12 +31,19 @@ class ProfileController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255'],
+            'weight' => ['required', 'string', 'max:255'],
+            'height' => ['required', 'string', 'max:255'],
+
             'picture' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif']
         ]);
 
         // تحديث البيانات
         $gym_member->name = $request->name;
         $gym_member->email = $request->email;
+        $gym_member->weight = $request->weight;
+        $gym_member->height = $request->height;
+
+
 
         // إذا تم رفع صورة جديدة
         if ($request->hasFile('picture')) {

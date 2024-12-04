@@ -61,29 +61,29 @@
         <div class="linear calculator">
           <p class="headings blk-text vertical-margin">Protein Calculator</p>
           <form>
-            <input type="text" placeholder="Weight" />
-            <input type="text" placeholder="Height" />
-            <input type="number" placeholder="Age" />
-            <select name="Gender" id="gender">
+            <input type="number" id='pro_weight' placeholder="Weight" />
+            {{-- <input type="number" placeholder="Height" /> --}}
+            {{-- <input type="number" placeholder="Age" /> --}}
+            {{-- <select name="Gender" id="gender">
               <option value="">Gender</option>
               <option value="female">Female</option>
-              <option value="male">Male</option>
+              <option value="male">Male</option> --}}
             </select>
-            <select name="Goal" id="goalP">
+            <select name="Goal" id="pro_goal">
               <option value="">Goal</option>
-              <option value="loss">Weight loss</option>
-              <option value="gain">Weight gain</option>
-              <option value="maintain">Maintain weight</option>
+              <option value="0.3">Weight loss and building muscles</option>
+              <option value="0.7">Muscle amplification</option>
+              <option value="0.001">Maintaining</option>
             </select>
-            <select name="Activity level" id="activity">
+            <select name="Activity level" id="pro_activity">
               <option value="">Activity level</option>
-              <option value="moderate">Moderatly active</option>
-              <option value="none">Not active</option>
-              <option value="light">Lightly active</option>
-              <option value="very">Very active</option>
+              <option value="1.8">Moderatly active</option>
+              <option value="1.0">Not active</option>
+              <option value="1.4">Lightly active</option>
+              <option value="2.2">Very active</option>
             </select>
           </form>
-          <button id="proteinCalc" class="btn btn-warning text vertical-margin">
+          <button id="proteinCalc" onclick=protein_calculator() class="btn btn-warning text vertical-margin">
             Calculate
           </button>
         </div>
@@ -92,10 +92,11 @@
         <div class="gradient-border">
         <span
           >Your Daily Protein Needs Are Set! 💪 <br>
-           Aim for [grams of protein] grams of protein each day. Protein is key to fueling your energy and recovery, so let’s keep you powered up and on track!!</span
+           Aim for <h5 id="protine"></h5>grams of protein each day. Protein is key to fueling your energy and recovery, so let’s keep you powered up and on track!!</span
         >
       </div>
     </div>
+  
 
       <!--Second calculator-->
       <div id="calsCalc" class="col-md-5 col-10 center-block calc">
@@ -114,29 +115,29 @@
         <div class="radial calculator">
           <p class="headings blk-text vertical-margin">Calories Calculator</p>
           <form>
-            <input type="text" placeholder="Weight" />
-            <input type="text" placeholder="Height" />
-            <input type="number" placeholder="Age" />
-            <select name="Gender" id="gender">
+            <input type="number" id='cal_weight' placeholder="Weight" />
+            <input type="number" id='cal_height' placeholder="Height" />
+            <input type="number" id='cal_age' placeholder="Age" />
+            <select name="Gender" id="cal_gender">
               <option value="">Gender</option>
               <option value="female">Female</option>
               <option value="male">Male</option>
             </select>
-            <select name="Goal" id="goal">
+            <select name="Goal" id="cal_goal">
               <option value="">Goal</option>
               <option value="loss">Weight loss</option>
               <option value="gain">Weight gain</option>
               <option value="maintain">Maintain weight</option>
             </select>
-            <select name="Activity level" id="activity">
+            <select name="Activity level" id="cal_activity">
               <option value="">Activity level</option>
-              <option value="moderate">Moderatly active</option>
-              <option value="none">Not active</option>
-              <option value="light">Lightly active</option>
-              <option value="very">Very active</option>
+              <option value="1.55">Moderatly active</option>
+              <option value="1.2">Not active</option>
+              <option value="1.375">Lightly active</option>
+              <option value="1.75">Very active</option>
             </select>
           </form>
-          <button id="caloriesCalc" class="btn btn-warning text vertical-margin">
+          <button id="caloriesCalc" onclick=calorie_calculator()  class="btn btn-warning text vertical-margin">
             Calculate
           </button>
         </div>
@@ -145,11 +146,16 @@
         <div class="gradient-border">
           <span
             >Here’s Your Daily Calorie Target! 🌟 <br>
-            To support your gaol and reach balanced energy levels, aim for [calculated calories] calories each day. Tracking your intake can help you stay on course and see steady progress. Let’s keep the momentum going!</span
+            To support your gaol and reach balanced energy levels, aim for<h5 id="result"></h5>
+ calories each day. Tracking your intake can help you stay on course and see steady progress. Let’s keep the momentum going!</span
           >
         </div>
       </div>
+      
     </div>
+
+
+    
     <!--end page content-->
   @endsection
 

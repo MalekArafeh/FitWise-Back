@@ -1,7 +1,20 @@
 /*Make calories result visible*/
 document.getElementById("caloriesCalc").addEventListener("click", function (x) {
+    console.log('tmm');
     x.preventDefault();
-    document.getElementById("calories").style.display = "block";
+    // document.getElementById("calories").style.display = "block";
+    document.getElementById("result") = 15;
+
+
+    //  
+    // 
+
+    // 
+
+
+    
+
+
 });
 
 /*Make protein result visible*/
@@ -36,4 +49,43 @@ function showCalc(evt, calcId) {
         evt.currentTarget.querySelector(".icon").innerHTML =
             '<i class="fa-solid fa-arrow-right blk-text"></i>';
     }
+}
+
+
+
+
+document.getElementById("caloriesCalc").addEventListener("click", calorie_calculator);
+
+
+
+
+
+function calorie_calculator()
+{
+    console.log("Function executed"); // تأكيد التنفيذ
+
+    const weight=document.getElementById('cal_weight').value;
+    const height=document.getElementById('cal_height').value;
+    const age=document.getElementById('cal_age').value;
+    const gender=document.getElementById('gender').value;
+    const goal=document.getElementById('goal').value;
+    const activity = parseFloat(document.getElementById('activity').value);
+    if (!weight || !height || !age || !gender || !activity) {
+        alert("Please fill in all the fields!");
+        return;
+    }
+     let BMR;
+            if (gender === "male") {
+                BMR = 10 * weight + 6.25 * height - 5 * age + 5;
+            } else {
+                BMR = 10 * weight + 6.25 * height - 5 * age - 161;
+            }
+
+            // حساب السعرات
+            const calories = BMR * activity;
+            document.getElementById("result").innerText = Math.round(calories);
+
+
+
+
 }

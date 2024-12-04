@@ -55,7 +55,17 @@
           </div>
           <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" value="{{ $gym_member->email }}">
+            <input type="email" class="form-control" id="email" name="email" value="{{ $gym_member->email }}"disabled>
+          </div>
+
+          <div class="mb-3">
+            <label for="" class="form-label">weight</label>
+            <input type="tel" class="form-control" id="weight" name="weight" value="{{ $gym_member->weight }}" >
+          </div>
+
+          <div class="mb-3">
+            <label for="height" class="form-label">height</label>
+            <input type="tel" class="form-control" id="height" name="height" value="{{ $gym_member->height }}">
           </div>
         </form>
       </div>
