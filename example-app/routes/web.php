@@ -30,8 +30,14 @@ Route::delete('/admin/members/{id}', [GymMemberController::class, 'destroy'])->n
 
 // plans: 
 Route::get('/admin/plan', [GymPlanController::class, 'index'])->name('admin.plan.index');
+<<<<<<< HEAD
 route::put('admin/plan/{id}',[GymMemberController::class, 'update'])->name('admin.plan.update');
 Route::get('/admin/mem/{id}/edit',[GymMemberController::class, 'edit'])->name('admin.members.edit');
+=======
+route::put('admin/plan/{id}',[GymMemberController::class, 'update'])->name('admin.members.update');
+Route::get('/admin/mem/{id}/edit',[GymMemberController::class, 'edit'])->name('admin.members.edit');
+Route::post('/admin/members', [MemberRegController::class, 'store'])->name('admin.members.store');
+>>>>>>> b537a542e9374fbcd819d562e826c29c52a93ca5
 
 
 // Admin profile: 
