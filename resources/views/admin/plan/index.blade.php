@@ -50,18 +50,18 @@
                         @php
                         $counter = 1; // Initialize counter
                     @endphp
-                        @foreach ($gym_members as $member)
+                        @foreach ($plans as $plan)
                         
                         <tr>
                             <td><img src={{url('admin\dist\img\yazan.jpg')}} class="img-circle elevation-2" alt="User Image"></td>
                             <td>{{ $counter }}</td> 
-                            <td>{{$member->name}}</td>
-                            <td>{{$member->phone}}</td>
+                            <td>{{$plan->plan_Name}}</td>
+                            <td>{{$plan->plan_Period}}</td>
                             
-                            <td>{{$member->date_of_join}}</td>
-                            <td>{{$member->expiration_date}}</td>
-                           <td><a  class="edit-btn" id="3" href="{{route('admin.members.edit',$member->id)}}">Edit</a> 
-                            <form style="display:inline;" action="{{route('admin.member.destroy',$member->id)}}" method="POST">
+                            <td> {{$plan->plan_Price}}</td>
+                            <td>{{$plan->plan_Description}}</td>
+                           <td><a  class="edit-btn" id="3" href="">Edit</a> 
+                            <form style="display:inline;" action="{{route('admin.plan.destroy',$plan->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="edit-btn1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -87,74 +87,40 @@
                 <!-- /.card -->
               </div>
               <!-- Add members-->
-              <div class="popupmm">
-                <div class="popup-cuntentmm">
-                  <h4>Add plan</h4>
-                  <form action="{{route('admin.add_member.store')}}" method="POST">
-                    @csrf
+           
                     <div class="popupmm">
                         <div class="popup-cuntentmm">
                           <h4>Add plan</h4>
-                          <form action="">
+                          <form action="{{route('admin.add_plan.store')}}"method="POST">
+                            @csrf
                             <div class="popupform">
                             <div>
                                 <label for="">Name</label>
-                                <input name="name" type="text" class="inputpopup" placeholder=" name ">
+                                <input name="plan_Name" type="text" class="inputpopup" placeholder=" name ">
                                 <label for="">plan_Period</label>
-                                <input name="text" type="text" class="inputpopup" placeholder="  time">
+                                <input name="plan_Period" type="number" class="inputpopup" placeholder="  time">
         
                             </div>
                             <div>
                                 <label for="">price</label>
-                                <input type="number" class="inputpopup" placeholder="  0.jod ">
+                                <input name="plan_Price" type="number" class="inputpopup" placeholder="  0.jod ">
                                 <label for="">Description</label>
-                                <input type="text" class="inputpopup" placeholder="  Description">
-        
+                                <input name="plan_Description" type="text" class="inputpopup" placeholder="  Description">
+                                <div>
+                                  <br>
+                                  <button type="submit" class="edit-btn">Add plan</button>
+                                  <button class="butformcancel" id="close">cancel</button>
+                              </div>
                             </div>
-                        </div>
+                            
+                          </form>
 
+                          </div>
+                      
+                        
 
              
-              {{-- <div class="popupmmEdit">
-                <div class="popup-cuntentmm">
-                  <h4>Edit Member</h4>
-                  <form action="{{route('admin.members.update',1)}}" method="post">
-                    @csrf
-                 
-                    <div class="popupform">
-                    <div>
-                        <label for="">Name</label>
-                        <input name='name' type="text" class="inputpopup" placeholder="Enter Name">
-                        <label for="">Email</label>
-                        <input name='email' type="text"   class="inputpopup" placeholder=" Enter Email">
-
-                    </div>
-                    <div>
-                        <label name='date_of_join'  for="">Date Enrolled</label>
-                        <input type="date" class="inputpopup" placeholder="Enter Date Enrolled ">
-                        <label for="">Date Expiration</label>
-                        <input name='expiration_date'  type="date" class="inputpopup" placeholder="Enter Date Expiration ">
-
-                    </div>
-                </div>
-                <div class="popupform">
-                 
-                    <div>
-                        <br>
-                        <button class="edit-btn">Edit Member</button>
-                        <button class="butformcancel" id="close">cancel</button>
-                    </div>
-                </div>
-             
-
-                  
-
-                  </form>
-                  
-
-                  
-                </div>
-              </div> --}}
+          
             </div>
 
             

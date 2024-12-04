@@ -11,24 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('plane', function (Blueprint $table) {
+        Schema::create('plans', function (Blueprint $table) {
             $table->id('plan_ID');
-            $table->string(column: 'plane_Name');
+            $table->string(column: 'plan_Name');
             $table->integer('plan_Price');
-            $table->string(column: 'plane_Description');
+            $table->string(column: 'plan_Description');
             $table->time('time');
-            $table->string('plan_Period');
+            $table->integer('plan_Period');
             $table->timestamps();
 
-             
-        });
-    }
+          });
+        }
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('plane');
+        //
     }
 };
