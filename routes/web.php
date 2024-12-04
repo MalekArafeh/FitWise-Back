@@ -47,9 +47,10 @@ Route::get('/classes', function () {
 // User: 
 Route::Get('/', [RegistrationController::class, 'index']);
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('user.login');
+Route::get('/login/destroy', [LoginController::class, 'destroy'])->name('user.logout');
 // Route::post('/login', [LoginController::class, 'login'])->name('user.login');
-Route::post('/login', [GymMemberController::class, 'postLogin'])->name('user.login');
+Route::get('/login/check', [GymMemberController::class, 'postLogin'])->name('user.login.check');
 
 // Route::post('/', [RegistrationController::class, 'store']);
 

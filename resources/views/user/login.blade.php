@@ -29,7 +29,7 @@
                 alt="User Image">
 
             <div class="div2">LOGIN TO FITWISE</div>
-            <form action="{{ route('user.login') }}" method="POST">
+            <form action="{{ route('user.login.check') }}">
                 @csrf
                 <input type="email" id="email" name="email" class="mb-4 mt-4" placeholder="Email" required><br>
                 <input type="password" id="password" name="password" placeholder="Password" required><br>

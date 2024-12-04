@@ -68,7 +68,7 @@
                 <li><a class="dropdown-item" href="#">Lanhuage</a></li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <a class="dropdown-item red-text" href="{{url('/login')}}">Sign out</a>
+                  <a class="dropdown-item red-text" href="{{route('user.logout')}}">Sign out</a>
                 </li>
               </ul>
             </li>
