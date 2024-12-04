@@ -8,7 +8,7 @@
 <div class="p">
 
       <h4>Edit Member</h4>
-      <form action="{{route('admin.members.update',$member->id)}}" method="post">
+      <form action="{{route('admin.members.update', $member->id)}}" method="post">
       @csrf
       @method('PUT')
      
@@ -20,9 +20,8 @@
             <input name='phone' value="{{$member->phone}}" type="tel" class="inputpopup" placeholder="Enter Name">
             <label for="">Email</label>
             <input name='email' type="text"  value="{{$member->email}}"  class="inputpopup" placeholder=" Enter Email">
-
-            <label name='date_of_join'  value="{{$member->date_of_join}}" for="">Date Enrolled</label>
-            <input type="date" class="inputpopup" placeholder="Enter Date Enrolled ">
+            <label for="">Date Enrolled</label>
+            <input  name='date_of_join'  value="{{$member->date_of_join}}" type="date" class="inputpopup" placeholder="Enter Date Enrolled ">
             <label for="">Date Expiration</label>
             <input name='expiration_date'   value="{{$member->expiration_date}}"type="date" class="inputpopup" placeholder="Enter Date Expiration ">
 
