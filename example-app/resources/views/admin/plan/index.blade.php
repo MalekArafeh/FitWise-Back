@@ -1,7 +1,7 @@
 
 @extends('layout.App')
-@section('title') Members @endsection
-@section('titlePage') Members page @endsection
+@section('title') Plans @endsection
+@section('titlePage') plans page @endsection
 
 @section('content')
 
@@ -38,14 +38,12 @@
                     <table class="table table-hover text-nowrap">
                       <thead>
                         <tr>
-                          <td>picture</td>
-                          <th>Member Id</th>
-                          <th>Name</th>
-                          <th>phone</th>
-                          <th>Date Enrolled</th>
-                          <th>Date Expiration</th>
-                          <th>Actions</th>
-                      
+                            <th>ID plan</th>
+                            <th>Name</th>
+                            <th>time</th>
+                            <th>price</th>
+                            <th>Description</th>                       
+                            <th>Actions</th>    
                         </tr>
                       </thead>
                       <tbody>
@@ -91,31 +89,29 @@
               <!-- Add members-->
               <div class="popupmm">
                 <div class="popup-cuntentmm">
-                  <h4>Add Member</h4>
+                  <h4>Add plan</h4>
                   <form action="{{route('admin.add_member.store')}}" method="POST">
                     @csrf
-                    <div class="popupform">
-                    <div>
-                        <label for="">Name</label>
-                        <input name="name" type="text" class="inputpopup" placeholder=" Enter member name">
-                        <label for="">Phone number</label>
-                        <input name="phone" type="tel" class="inputpopup" placeholder=" Enter phone number">
-                        <label for="">Email</label>
-                        <input name="email" type="mail" class="inputpopup" placeholder=" Enter email">                     
-                    </div>
-                    <div>
-                      <label for="">Date Enrolled</label>
-                        <input name="date_of_join" type="date" class="inputpopup" placeholder=" Enter date">
-                        <label for="">Expiration date</label>
-                        <input name="expiration_date" type="date" class="inputpopup" placeholder=" Enter date">
-                        <label for="">Password</label>
-                        <input name="password" type="password" class="inputpopup" >
-                        <div style=" margin-top: 20px; text-align: right;">
-                          <button class="edit-btn">Add Member</button>
-                          <button class="butformcancel" id="close">cancel</button>
+                    <div class="popupmm">
+                        <div class="popup-cuntentmm">
+                          <h4>Add plan</h4>
+                          <form action="">
+                            <div class="popupform">
+                            <div>
+                                <label for="">Name</label>
+                                <input name="name" type="text" class="inputpopup" placeholder=" name ">
+                                <label for="">plan_Period</label>
+                                <input name="text" type="text" class="inputpopup" placeholder="  time">
+        
+                            </div>
+                            <div>
+                                <label for="">price</label>
+                                <input type="number" class="inputpopup" placeholder="  0.jod ">
+                                <label for="">Description</label>
+                                <input type="text" class="inputpopup" placeholder="  Description">
+        
+                            </div>
                         </div>
-                    </div>
-                </div>
 
 
              

@@ -16,8 +16,14 @@ return new class extends Migration
             $table->string('trainer_name');
             $table->string('trainer_mail')->unique();
             $table->string('trainer_phone');
+<<<<<<< HEAD
+            $table->string('trainer_availability',10);
+            
+           
+=======
             $table->string('trainer_availability', 10);
 
+>>>>>>> 3348a7f9f6fef3e4b5e230393e947007086ca25e
             $table->timestamps();
         });
     }

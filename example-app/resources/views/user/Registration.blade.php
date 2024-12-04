@@ -62,7 +62,7 @@
           Start a better shape of you!<span><br>Come Join Us!</span>
            </p>
           <button type="button" class="btn btn-warning mt-4" onclick="openPopup()">Register</button>
-          TODO: implement registration from user registration page in phase 2 with payment
+          {{-- TODO: implement registration from user registration page in phase 2 with payment --}}
           {{-- <div class="popup" id="popup">
             <div class="popup-cuntentmm">
 
