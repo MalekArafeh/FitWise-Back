@@ -8,9 +8,6 @@
   <style></style>
 @endsection
 
-@section('scripts')
-@endsection
-
 <!--Page content-->
 @section('content')
   <section class="status">
@@ -99,4 +96,8 @@
       <img src="{{asset('img/promo2.png')}}" alt="" class="banner-img" />
     </div>
   </section>
+@endsection
+
+@section('scripts')
+  <script src="{{asset('user/js/home.js')}}" defer></script>
 @endsection

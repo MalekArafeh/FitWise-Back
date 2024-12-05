@@ -1,188 +1,184 @@
 /*max-width:820px for small screen?*/
 
 :root {
-    --color1: #729788;
-    --color2: #c9e983;
-    --white-color: #fdfcfa;
-    --dark-green: #394b46;
-    --red-color: #ea0404;
-    --yellow-color: #f5dc6b;
-    --break-point: 820px;
+  --color1: #729788;
+  --color2: #c9e983;
+  --white-color: #fdfcfa;
+  --dark-green: #394b46;
+  --red-color: #ea0404;
+  --yellow-color: #f5dc6b;
+  --break-point: 820px;
 }
 
 /*general styles*/
 body {
-    background-color: var(--white-color);
-    font-family: "Lato", "Montserrat", sans-serif;
+  background-color: var(--white-color);
+  font-family: "Lato", "Montserrat", sans-serif;
 }
 
 span {
-    color: var(--dark-green);
+  color: var(--dark-green);
 }
 
 footer {
-    padding: calc(8px + 1.5625vw);
+  padding: calc(8px + 1.5625vw);
 }
 
 hr {
-    border: none;
-    height: 2px;
-    /* Set the hr color */
-    color: var(--dark-green); /* old IE */
-    background-color: var(--dark-green);
+  border: none;
+  height: 2px;
+  /* Set the hr color */
+  color: var(--dark-green); /* old IE */
+  background-color: var(--dark-green);
 }
 
 .navbar {
-    --bs-navbar-active-color: var(--dark-green);
-    --bs-navbar-brand-color: var(--dark-green);
+  --bs-navbar-active-color: var(--dark-green);
+  --bs-navbar-brand-color: var(--dark-green);
 }
 
 .linear {
-    background-image: linear-gradient(to right, var(--color1), var(--color2));
+  background-image: linear-gradient(to right, var(--color1), var(--color2));
 }
 
 .linear-p {
-    background-image: linear-gradient(to top, var(--color1), var(--color2));
+  background-image: linear-gradient(to top, var(--color1), var(--color2));
 }
 
 .linear-bottom-top {
-    background-image: linear-gradient(
-        to top left,
-        var(--color1),
-        var(--color2)
-    );
+  background-image: linear-gradient(to top left, var(--color1), var(--color2));
 }
 @media (max-width: 820px) {
-    .linear-bottom-top {
-        display: flex;
-        flex-direction: column;
-    }
+  .linear-bottom-top {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .radial {
-    background-image: radial-gradient(at right, var(--color2), var(--color1));
+  background-image: radial-gradient(at right, var(--color2), var(--color1));
 }
 
 .svg-bg {
-    position: absolute;
-    pointer-events: none;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: -1;
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
 }
 
 .sticky {
-    position: sticky;
-    top: 0;
+  position: sticky;
+  top: 0;
 }
 
 .red-text {
-    color: var(--red-color);
+  color: var(--red-color);
 }
 
 .headings {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .text {
-    font-size: 14px;
-    font-family: "Lato", "Montserrat", sans-serif;
+  font-size: 14px;
+  font-family: "Lato", "Montserrat", sans-serif;
 }
 
 .blk-text {
-    color: var(--dark-green);
+  color: var(--dark-green);
 }
 
 #greeting {
-    display: flex; /* Ensure the element is displayed */
-    visibility: visible; /* Ensure the element is visible */
-    z-index: 3;
-    position: relative;
-    margin-left: 5%;
-    margin-top: 2%;
-    color: var(--blk-color);
+  display: flex; /* Ensure the element is displayed */
+  visibility: visible; /* Ensure the element is visible */
+  z-index: 3;
+  position: relative;
+  margin-left: 5%;
+  margin-top: 2%;
+  color: var(--blk-color);
 }
 
 .btn {
-    border-radius: 7px;
-    /*padding: 3px 20px;*/
-    font-size: 13px;
-    border: none;
-    columns: var(--dark-green);
+  border-radius: 7px;
+  /*padding: 3px 20px;*/
+  font-size: 13px;
+  border: none;
+  columns: var(--dark-green);
 }
 
 .btn-warning {
-    background-color: rgba(245, 220, 107, 1);
+  background-color: rgba(245, 220, 107, 1);
 }
 
 .primary-btn {
-    /*background-color: var(--color1);
+  /*background-color: var(--color1);
   color: var(--white-color);*/
-    border-radius: 7px;
-    border: 2px solid var(--color1);
-    background-color: #f0f0f0;
-    color: var(--color1);
+  border-radius: 7px;
+  border: 2px solid var(--color1);
+  background-color: #f0f0f0;
+  color: var(--color1);
 }
 
 .warning-btn {
-    background-color: var(--red-color);
-    color: var(--white-color);
+  background-color: var(--red-color);
+  color: var(--white-color);
 }
 
 .lg-btn {
-    border-radius: 8px;
-    padding: 5px 30px;
-    font-size: 15px;
-    background-color: var(--yellow-color);
-    color: var(--dark-green);
-    border: none;
-    margin-top: 15px;
+  border-radius: 8px;
+  padding: 5px 30px;
+  font-size: 15px;
+  background-color: var(--yellow-color);
+  color: var(--dark-green);
+  border: none;
+  margin-top: 15px;
 }
 
 .vertical-margin {
-    margin-top: 9%;
-    margin-bottom: 9%;
+  margin-top: 9%;
+  margin-bottom: 9%;
 }
 
 /*home styles*/
 .index {
-    /*for full schedule*/
-    z-index: -2;
+  /*for full schedule*/
+  z-index: -2;
 }
 
 .busy-status {
-    border-radius: 10px;
-    border: 1px solid var(--red-color);
-    width: 150px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 20px;
-    position: absolute;
-    right: 0;
-    margin-top: 1%;
-    margin-right: 3%;
-    z-index: -2;
+  border-radius: 10px;
+  border: 1px solid var(--red-color);
+  width: 150px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  position: absolute;
+  right: 0;
+  margin-top: 1%;
+  margin-right: 3%;
+  z-index: -2;
 }
 
 .bar {
-    border-radius: 9px;
-    height: 10px;
+  border-radius: 9px;
+  height: 10px;
 }
 
 .full {
-    background-color: #d9d9d9;
-    z-index: -2;
-    width: 300px;
+  background-color: #d9d9d9;
+  z-index: -2;
+  width: 300px;
 }
 
 @media (max-width: 820px) {
-    .full {
-        width: 200px;
-    }
+  .full {
+    width: 200px;
+  }
 }
 
 /* .busyness {
@@ -194,267 +190,267 @@ hr {
 } */
 
 .busyness {
-    height: 100%;
-    width: 60%;
-    /* this will do the magic */
-    -webkit-mask: linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0);
+  height: 100%;
+  width: 0%;
+  /* this will do the magic */
+  -webkit-mask: linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0);
 }
 .busyness::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: linear-gradient(
-        to right,
-        var(--color2),
-        #f57c00,
-        var(--red-color)
-    ); /* your gradient here */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to right,
+    var(--color2),
+    #f57c00,
+    var(--red-color)
+  ); /* your gradient here */
 }
 
 .status {
-    /*margin-left: auto;
+  /*margin-left: auto;
   margin-right: 3%;
   margin-top: 2%;*/
-    position: absolute;
-    right: 0;
-    margin-right: 3.6%;
-    align-items: center;
-    text-align: center;
-    z-index: -2;
+  position: absolute;
+  right: 0;
+  margin-right: 3.6%;
+  align-items: center;
+  text-align: center;
+  z-index: -2;
 }
 
 .status-icon {
-    /*margin-left: auto;
+  /*margin-left: auto;
   margin-right: 3%;
   margin-top: 2%;*/
-    font-size: 3em;
-    color: #f57c00;
-    z-index: -2;
+  font-size: 3em;
+  color: #f57c00;
+  z-index: -2;
 }
 
 .margin-top {
-    margin-top: 7%;
+  margin-top: 7%;
 }
 @media (max-width: 820px) {
-    .margin-top {
-        margin-top: 15%;
-    }
+  .margin-top {
+    margin-top: 15%;
+  }
 }
 
 .margin-bottom {
-    margin-bottom: 9%;
+  margin-bottom: 9%;
 }
 @media (max-width: 820px) {
-    .margin-bottom {
-        margin-bottom: 13%;
-    }
+  .margin-bottom {
+    margin-bottom: 13%;
+  }
 }
 
 .center-block {
-    margin-right: auto;
-    margin-left: auto;
-    border-radius: 12px;
-    padding: calc(8px + 1.5625vw);
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 12px;
+  padding: calc(8px + 1.5625vw);
 }
 @media (max-width: 820px) {
-    .center-block {
-        margin-bottom: 5%;
-    }
+  .center-block {
+    margin-bottom: 5%;
+  }
 }
 
 .dark-border {
-    border: 1px solid var(--dark-green);
-    border-radius: 10px;
-    padding: 1%;
-    margin-top: calc(8px + 1.5625vw);
-    margin-bottom: calc(8px + 1.5625vw);
+  border: 1px solid var(--dark-green);
+  border-radius: 10px;
+  padding: 1%;
+  margin-top: calc(8px + 1.5625vw);
+  margin-bottom: calc(8px + 1.5625vw);
 }
 
 @media (min-width: 820px) {
-    .ms-lg-5 {
-        position: absolute;
-        right: 0;
-        margin-right: 1%;
-    }
+  .ms-lg-5 {
+    position: absolute;
+    right: 0;
+    margin-right: 1%;
+  }
 }
 
 .center-left {
-    align-items: center;
-    justify-content: right;
-    display: flex;
+  align-items: center;
+  justify-content: right;
+  display: flex;
 }
 
 .banner {
-    width: 75%;
-    height: 450px;
-    border-radius: 12px;
+  width: 75%;
+  height: 450px;
+  border-radius: 12px;
 }
 @media (max-width: 820px) {
-    .banner {
-        width: 100%;
-        height: 300px;
-    }
+  .banner {
+    width: 100%;
+    height: 300px;
+  }
 }
 
 .banner-img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: fill;
-    border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: fill;
+  border-radius: 12px;
 }
 
 .no-link {
-    color: var(--dark-green);
-    text-decoration: none;
+  color: var(--dark-green);
+  text-decoration: none;
 }
 
 /*footer style*/
 .footer-margins {
-    margin: 0.3rem 0.5rem;
+  margin: 0.3rem 0.5rem;
 }
 
 @media (max-width: 820px) {
-    .hide-on-sm {
-        display: none;
-    }
+  .hide-on-sm {
+    display: none;
+  }
 }
 
 @media (min-width: 820px) {
-    .hide-on-lg {
-        display: none;
-    }
+  .hide-on-lg {
+    display: none;
+  }
 }
 
 /*health styles*/
 .calculator {
-    padding: 2%;
-    border-radius: 8px;
-    text-align: center;
-    margin: 2%;
+  padding: 2%;
+  border-radius: 8px;
+  text-align: center;
+  margin: 2%;
 }
 
 .calc {
-    display: none;
+  display: none;
 }
 
 @media (min-width: 820px) {
-    .calc {
-        margin-top: 5%;
-    }
+  .calc {
+    margin-top: 5%;
+  }
 }
 
 .center-menu {
-    display: flex;
-    margin: auto;
+  display: flex;
+  margin: auto;
 }
 
 .calculators-menu {
-    background: linear-gradient(var(--white-color), var(--white-color))
-            padding-box,
-        linear-gradient(to right, var(--color1), var(--color2)) border-box;
-    border-radius: 8px;
-    border: 2px solid transparent;
-    padding: 13% 13% 13% 5%;
-    width: 250px;
-    display: grid;
-    flex-shrink: 0;
+  background: linear-gradient(var(--white-color), var(--white-color))
+      padding-box,
+    linear-gradient(to right, var(--color1), var(--color2)) border-box;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  padding: 13% 13% 13% 5%;
+  width: 250px;
+  display: grid;
+  flex-shrink: 0;
 }
 
 @media (max-width: 820px) {
-    .calculators-menu {
-        display: none;
-    }
+  .calculators-menu {
+    display: none;
+  }
 }
 
 .option {
-    margin: 2% 7% 5% 4%;
+  margin: 2% 7% 5% 4%;
 }
 
 .option:hover {
-    background-color: #f0f0f0; /* Light gray background on hover */
-    color: #394b46; /* Change text color on hover */
-    cursor: pointer; /* Show pointer on hover */
+  background-color: #f0f0f0; /* Light gray background on hover */
+  color: #394b46; /* Change text color on hover */
+  cursor: pointer; /* Show pointer on hover */
 }
 
 .content {
-    padding-left: 2%;
-    padding-right: 2%;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 .mg {
-    margin-left: 7%;
+  margin-left: 7%;
 }
 
 .tabs {
-    margin-top: 8%;
-    margin-left: 3%;
+  margin-top: 8%;
+  margin-left: 3%;
 }
 
 .tabs button {
-    background: linear-gradient(var(--white-color), var(--white-color))
-            padding-box,
-        linear-gradient(to right, var(--color1), var(--color2)) border-box;
-    border-radius: 15px;
-    border: 2px solid transparent;
+  background: linear-gradient(var(--white-color), var(--white-color))
+      padding-box,
+    linear-gradient(to right, var(--color1), var(--color2)) border-box;
+  border-radius: 15px;
+  border: 2px solid transparent;
 }
 
 .tabs button.active {
-    background-image: linear-gradient(to right, var(--color1), var(--color2));
-    border: none;
+  background-image: linear-gradient(to right, var(--color1), var(--color2));
+  border: none;
 }
 
 #calories {
-    display: none;
+  display: none;
 }
 
 #protein {
-    display: none;
+  display: none;
 }
 
 input,
 select {
-    border: 1px solid #d9d9d9;
-    border-radius: 6px;
-    width: 100%;
-    margin: 4px 0;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  width: 100%;
+  margin: 4px 0;
 }
 
 ::placeholder {
-    font-size: 14px;
-    font-family: "Lato", "Montserrat", sans-serif;
-    color: var(--blk-color);
+  font-size: 14px;
+  font-family: "Lato", "Montserrat", sans-serif;
+  color: var(--blk-color);
 }
 
 ::-webkit-input-placeholder {
-    font-size: 14px;
-    font-family: "Lato", "Montserrat", sans-serif;
-    color: var(--blk-color);
+  font-size: 14px;
+  font-family: "Lato", "Montserrat", sans-serif;
+  color: var(--blk-color);
 }
 
 .gradient-border {
-    background: linear-gradient(var(--white-color), var(--white-color))
-            padding-box,
-        linear-gradient(to right, var(--color1), var(--color2)) border-box;
-    border-radius: 8px;
-    border: 2px solid transparent;
-    padding: 9px;
-    margin-top: 9%;
+  background: linear-gradient(var(--white-color), var(--white-color))
+      padding-box,
+    linear-gradient(to right, var(--color1), var(--color2)) border-box;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  padding: 9px;
+  margin-top: 9%;
 }
 
 /*full schedule style*/
 #title {
-    display: flex; /* Ensure the element is displayed */
-    visibility: visible; /* Ensure the element is visible */
-    z-index: 3;
-    position: absolute;
-    right: 0;
-    margin-right: 10%;
-    margin-top: 4%;
-    color: var(--blk-color);
-    font-size: 25px;
+  display: flex; /* Ensure the element is displayed */
+  visibility: visible; /* Ensure the element is visible */
+  z-index: 3;
+  position: absolute;
+  right: 0;
+  margin-right: 10%;
+  margin-top: 4%;
+  color: var(--blk-color);
+  font-size: 25px;
 }
