@@ -23,9 +23,9 @@
         </div>
         <div class="d-flex  justify-content-center pt-5">
           <div class="weight p-3">
-            current Weight: <br>{{$gym_member->weight}} Kg
+            Current Weight: <br>{{$gym_member->weight}} Kg
           </div>
-          <div class="height p-3">Current height <br> {{$gym_member->height}} Cm </div>
+          <div class="height p-3">Current Height <br> {{$gym_member->height}} Cm </div>
         </div>
         <div class="email text-center">Email: {{$gym_member->email}} </div> 
 <!-- الزر لفتح النافذة المنبثقة -->
