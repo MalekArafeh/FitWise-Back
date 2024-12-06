@@ -16,12 +16,11 @@ return new class extends Migration
             $table->string(column: 'plan_Name');
             $table->integer('plan_Price');
             $table->string(column: 'plan_Description');
-            $table->time('time');
+            // $table->time('time');
             $table->integer('plan_Period');
             $table->timestamps();
-
-          });
-        }
+        });
+    }
 
     /**
      * Reverse the migrations.

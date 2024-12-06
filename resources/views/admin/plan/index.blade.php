@@ -61,7 +61,7 @@
                             <td> {{$plan->plan_Price}}</td>
                             <td>{{$plan->plan_Description}}</td>
                            <td><a  class="edit-btn" id="3" href="">Edit</a> 
-                            <form style="display:inline;" action="{{route('admin.plan.destroy',$plan->id)}}" method="POST">
+                            <form style="display:inline;" action="{{route('admin.plan.destroy',$plan->plan_ID)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="edit-btn1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
