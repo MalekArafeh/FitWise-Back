@@ -65,7 +65,7 @@ class GymMemberController extends Controller
             // return view('user.home');
         }
         // dd('hii');
-        return view('/user/login');
+        return redirect()->route('user.login')->withErrors(['Wrong credentials error', 'Wrong credentials']);
     }
     /**
      * Display the specified resource.

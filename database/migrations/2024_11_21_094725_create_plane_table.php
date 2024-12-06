@@ -19,8 +19,6 @@ return new class extends Migration
             $table->time('time');
             $table->string('plan_Period');
             $table->timestamps();
-
-             
         });
     }
 
