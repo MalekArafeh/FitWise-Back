@@ -24,6 +24,6 @@ class AdminLoginController extends Controller
             return redirect()->intended('/dashboard');
         }
         return redirect(route("admin.login"))
-            ->with("error", "Login failed");
+            ->withErrors(["Wrong credentials error", "Login failed"]);
     }
 }
