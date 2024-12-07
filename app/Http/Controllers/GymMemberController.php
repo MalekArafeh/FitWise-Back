@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\plan;
+
 use App\Models\GymMember;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,9 +15,8 @@ class GymMemberController extends Controller
      */
     public function index()
     {
-        $allplans =Plan::all();
         $members = GymMember::all();
-        return view("admin.members.index", ['gym_members' => $members,'plans'=>$allplans]);
+        return view("admin.members.index", ['gym_members' => $members]);
     }
 
     /**
@@ -67,8 +66,7 @@ class GymMemberController extends Controller
             // return view('user.home');
         }
         // dd('hii');
-        return redirect(route("user.login"))
-            ->withErrors(["Wrong credentials error", "Login failed"]);
+        return redirect()->route('user.login')->withErrors(['Wrong credentials error', 'Wrong credentials']);
     }
     /**
      * Display the specified resource.
@@ -109,9 +107,8 @@ class GymMemberController extends Controller
             'phone' => $request->phone,
             'date_of_join' => $request->date_of_join,
             'expiration_date' => $request->expiration_date,
-            
         ]);
-        
+
 
 
         $edit_member->save();

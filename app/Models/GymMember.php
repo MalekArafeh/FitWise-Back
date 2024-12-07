@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Plan;
+
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -22,8 +23,9 @@ class GymMember extends Authenticatable
         "height",
         "phone",
     ];
+
     public function plans(): BelongsToMany
     {
-        return $this->belongsToMany(Plan::class, 'plan_members', 'mem_ID', 'plan_id');
+        return $this->belongsToMany(Plan::class);
     }
 }
