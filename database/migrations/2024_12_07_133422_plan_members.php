@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('plans', function (Blueprint $table) {
-            $table->id('id');
-            $table->string(column: 'plan_Name');
-            $table->integer('plan_Price');
-            $table->string(column: 'plan_Description');
-            // $table->time('time');
-            $table->integer('plan_Period');
+        Schema::create('plan_members', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('mem_ID')
+                ->constrained('gym_members', 'id')
+                ->onDelete('cascade');
+
+            $table->foreignId('plan_id')
+                ->constrained('plans', 'id')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
