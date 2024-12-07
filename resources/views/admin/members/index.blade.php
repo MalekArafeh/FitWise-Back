@@ -101,7 +101,18 @@
                         <label for="">Phone number</label>
                         <input name="phone" type="tel" class="inputpopup" placeholder=" Enter phone number">
                         <label for="">Email</label>
-                        <input name="email" type="mail" class="inputpopup" placeholder=" Enter email">                     
+                        <input name="email" type="mail" class="inputpopup" placeholder=" Enter email">  
+                        <div id="list1" class="dropdown-check-list" tabindex="100">
+                          <span class="anchor">plan</span>
+                          <ul class="items">
+                            @foreach ($plans as $plan)
+                            <li><input name="plans[]" value="{{$plan->id}}" type="checkbox" /> {{$plan->plan_Name}}</li>
+
+                            @endforeach
+                          
+                          </ul>
+                        </div>              
+                                        
                     </div>
                     <div>
                       <label for="">Date Enrolled</label>
@@ -110,6 +121,9 @@
                         <input name="expiration_date" type="date" class="inputpopup" placeholder=" Enter date">
                         <label for="">Password</label>
                         <input name="password" type="password" class="inputpopup" >
+                        
+                        
+                        
                         <div style=" margin-top: 20px; text-align: right;">
                           <button class="edit-btn">Add Member</button>
                           <button class="butformcancel" id="close">cancel</button>

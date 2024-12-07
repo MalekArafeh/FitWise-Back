@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\plan;
 use App\Models\GymMember;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,8 +15,9 @@ class GymMemberController extends Controller
      */
     public function index()
     {
+        $allplans =Plan::all();
         $members = GymMember::all();
-        return view("admin.members.index", ['gym_members' => $members]);
+        return view("admin.members.index", ['gym_members' => $members,'plans'=>$allplans]);
     }
 
     /**
@@ -46,6 +47,7 @@ class GymMemberController extends Controller
             'date_of_join' => $request->date_of_join,
             'expiration_date' => $request->expiration_date,
         ]);
+        $member->plans()->attach($request->plans);
         Auth::guard('gym_members')->login($member);
         return to_route("admin.members.index");
     }
@@ -107,7 +109,9 @@ class GymMemberController extends Controller
             'phone' => $request->phone,
             'date_of_join' => $request->date_of_join,
             'expiration_date' => $request->expiration_date,
+            
         ]);
+        
 
 
         $edit_member->save();
