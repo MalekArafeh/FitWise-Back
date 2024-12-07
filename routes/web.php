@@ -4,12 +4,11 @@ use App\Http\Controllers\GymPlanController;
 
 use App\Http\Controllers\GymMemberController;
 use App\Http\Controllers\HealthController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\user\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\MemberRegController;
 use App\Http\Controllers\AdminLoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -60,7 +59,8 @@ Route::get('/login/check', [GymMemberController::class, 'postLogin'])->name('use
 // Route::post('/', [RegistrationController::class, 'store']);
 
 Route::view('/health', 'user.health');
-Route::view('/home/{id}', 'user.home')->name('home');
+// Route::view('/home/{id}', 'user.home')->name('home');
+Route::get('/home/{id}', [HomeController::class, 'index'])->name('user.home');
 Route::view('/schedule', 'user.schedule');
 Route::get('/profile', [ProfileController::class, 'index']);
 Route::get('/profile/{id}', [ProfileController::class, 'index'])->name('profile.show');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\GymMember;
+use App\Models\Plan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -16,7 +17,8 @@ class GymMemberController extends Controller
     public function index()
     {
         $members = GymMember::all();
-        return view("admin.members.index", ['gym_members' => $members]);
+        $plans = Plan::all();
+        return view("admin.members.index", ['gym_members' => $members, 'plans' => $plans]);
     }
 
     /**
@@ -61,7 +63,7 @@ class GymMemberController extends Controller
             $request->session()->regenerate();
             $userId = Auth::guard('gym_members')->user()->id;
             // dd($userId);
-            return redirect()->route('home', ['id' => $userId]);
+            return redirect()->route('user.home', ['id' => $userId]);
             // dd('helloo');
             // return view('user.home');
         }

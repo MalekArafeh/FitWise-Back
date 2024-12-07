@@ -26,6 +26,6 @@ class GymMember extends Authenticatable
 
     public function plans(): BelongsToMany
     {
-        return $this->belongsToMany(Plan::class);
+        return $this->belongsToMany(Plan::class, 'plan_members', 'mem_ID', 'plan_id');
     }
 }

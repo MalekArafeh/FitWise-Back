@@ -23,14 +23,15 @@
     <div class="row">
       <div class="col-md-5 col-11 radial center-block">
         <span class="headings col">Memberships</span>
+        @foreach ($plans as $plan)
         <div class="row">
           <div class="col-8">
             <div class="dark-border row">
-              <span class="headings">Pool Membership</span>
+              <span class="headings">{{$plan->plan_Name}}</span>
               <br />
               <span class="text"
-                ><i class="fa-solid fa-calendar blk-text"></i> Expires on
-                11/10/2024</span
+                ><i class="fa-solid fa-calendar blk-text"></i> Expires in
+                {{$plan->plan_Period}} month from {{$member->date_of_join}}</span
               >
             </div>
           </div>
@@ -38,7 +39,8 @@
             <button class="btn btn-warning">View</button>
           </div>
         </div>
-        <div class="row">
+        @endforeach
+        {{-- <div class="row">
           <div class="col-8">
             <div class="dark-border row">
               <span class="headings">Gym Membership</span>
@@ -52,7 +54,7 @@
           <div class="col center-left">
             <button class="btn btn-danger">View</button>
           </div>
-        </div>
+        </div> --}}
       </div>
       <div class="col-md-5 col-11 radial center-block">
         <div class="row">
@@ -96,6 +98,10 @@
       <img src="{{asset('img/promo2.png')}}" alt="" class="banner-img" />
     </div>
   </section>
+
+  <div class="view-membership-popup">
+    
+  </div>
 @endsection
 
 @section('scripts')
