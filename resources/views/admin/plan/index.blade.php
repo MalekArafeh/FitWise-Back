@@ -59,7 +59,7 @@
                             <td>{{$plan->plan_Name}}</td>
                             <td>{{$plan->plan_Period}}</td>
                             
-                            <td> $ {{$plan->plan_Price}}</td>
+                            <td> jd.{{$plan->plan_Price}}</td>
                             <td>{{$plan->plan_Description}}</td>
                            <td><a  class="edit-btn"  href="{{route('admin.plan.edit',$plan->id)}}">Edit</a> 
                             <form style="display:inline;" action="{{route('admin.plan.destroy',$plan->id)}}" method="POST">

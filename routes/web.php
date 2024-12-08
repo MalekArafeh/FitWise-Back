@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\classesController;
 use App\Http\Controllers\GymPlanController;
+use App\Http\Controllers\CoachController;
 
 use App\Http\Controllers\GymMemberController;
 use App\Http\Controllers\HealthController;
@@ -36,17 +38,22 @@ Route::get('/admin/plan/{id}/edit',  [GymPlanController::class, 'edit'])->name('
 Route::post('/admin/plan', [GymPlanController::class, 'store'])->name('admin.add_plan.store');
 Route::delete('/admin/plan/{id}', [GymPlanController::class, 'destroy'])->name('admin.plan.destroy');
 
-// route::put('admin/plan/{id}', [GymMemberController::class, 'update'])->name('admin.members.update');
-// Route::get('/admin/mem/{id}/edit', [GymMemberController::class, 'edit'])->name('admin.members.edit');
-
+//coash:
+Route::get('/admin/coaches', [CoachController::class, 'index'])->name('admin.coaches.index');
+Route::put('admin/coaches/{id}', [CoachController::class, 'update'])->name('admin.coaches.update');
+Route::get('/admin/coaches/{id}/edit',  [CoachController::class, 'edit'])->name('admin.coaches.edit');
+Route::post('/admin/coaches', [CoachController::class, 'store'])->name('admin.add_coaches.store');
+Route::delete('/admin/coaches/{id}', [CoachController::class, 'destroy'])->name('admin.coaches.destroy');
 
 // Admin profile: 
 // Route::get('/Admin_profile_page', [TestController::class, 'testAction']);
 
 // classes: 
-Route::get('/classes', function () {
-    return view('admin/classes');
-});
+Route::get('/admin/classes', [classesController::class, 'index'])->name('admin.classes.index');
+Route::put('/admin/classes/{id}', [CoachController::class, 'update'])->name('admin.classes.update');
+Route::get('/admin/classes/{id}/edit',  [CoachController::class, 'edit'])->name('admin.classes.edit');
+Route::post('/admin/classes', [CoachController::class, 'store'])->name('admin.add_classes.store');
+Route::delete('/admin/classes/{id}', [CoachController::class, 'destroy'])->name('admin.classes.destroy');
 
 
 // User: 

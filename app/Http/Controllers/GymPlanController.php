@@ -25,6 +25,7 @@ class GymPlanController extends Controller
             'plan_Description' => $request->plan_Description,
             'plan_Period' => $request->plan_Period,
             'plan_Price' => $request->plan_Price,
+            
 
         ]);
 

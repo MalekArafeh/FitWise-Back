@@ -60,7 +60,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="Coaches_Page.html" class="nav-link">
+                <a href="{{route('admin.coaches.index')}}" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
                   <p>
                     Coaches
@@ -76,7 +76,7 @@
                 </a>
               </li>
             <li class="nav-item">
-              <a href="Plans_Page.html" class="nav-link">
+              <a href="{{route('admin.plan.index')}}" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>
                 <p>
                   Plans

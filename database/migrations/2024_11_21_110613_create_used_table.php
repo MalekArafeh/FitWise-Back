@@ -19,7 +19,7 @@ return new class extends Migration
             ->onDelete('cascade');
 
             $table->foreignId('class_ID')
-            ->constrained('classes','class_ID')
+            ->constrained('classes','id')
             ->onDelete('cascade');
             $table->timestamps();
         });
