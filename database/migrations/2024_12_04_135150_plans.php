@@ -11,16 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('used', function (Blueprint $table) {
-            $table->id();
-
-            $table->foreignId('mem_ID')
-            ->constrained('gym_members','id')
-            ->onDelete('cascade');
-
-            $table->foreignId('class_ID')
-            ->constrained('classes','id')
-            ->onDelete('cascade');
+        Schema::create('plans', function (Blueprint $table) {
+            $table->id('id');
+            $table->string(column: 'plan_Name');
+            $table->integer('plan_Price');
+            $table->string(column: 'plan_Description');
+            // $table->time('time');
+            $table->integer('plan_Period');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('used');
+        //
     }
 };

@@ -12,13 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('classes', function (Blueprint $table) {
-            $table->id('class_ID');
-            $table->string('class_Name');
-            $table->date('class_Schedual');
+            $table->id('id');
+            $table->string(column: 'Name');
+            $table->string(column: 'Time');
+            $table->date('Date');
+            
             $table->string('class_Location');
             $table->string('class_Capacity');
             $table->foreignId('trainer_ID')
-                  ->constrained('trainer','trainer_ID')
+                  ->constrained('trainer','id')
                   ->onDelete('cascade');
 
 

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('plan_Price');
             $table->string(column: 'plane_Description');
             $table->time('time');
-            $table->date('plan_Period');
+            $table->string('plan_Period');
             $table->timestamps();
 
              
