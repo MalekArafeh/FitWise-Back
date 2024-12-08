@@ -11,16 +11,20 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MemberRegController;
 use App\Http\Controllers\AdminLoginController;
+use App\Http\Controllers\AdminProfileController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 //Admin: 
 
 // Admin login:
-Route::get('/dashboard', function () {
-    return view('admin.Dashboard_page');
-});
+// Route::get('/dashboard', function () {
+//     return view('admin.dashboard.index');
+// });
 Route::get('/adminLogin', [AdminLoginController::class, 'index'])->name('admin.login.index');
 Route::post('/adminLogin', [AdminLoginController::class, 'store'])->name('admin.login.store');
+Route::get('/adminLogin/destroy', [AdminLoginController::class, 'destroy'])->name('admin.login.destroy');
+
 
 // members: 
 Route::get('/admin/members', [GymMemberController::class, 'index'])->name('admin.members.index');
@@ -36,12 +40,17 @@ Route::get('/admin/mem/{id}/edit', [GymMemberController::class, 'edit'])->name('
 
 
 // Admin profile: 
-// Route::get('/Admin_profile_page', [TestController::class, 'testAction']);
+Route::get('/admin/profile', [AdminProfileController::class, 'index'])->name('admin.profile.index');
+Route::put('/admin/profile', [AdminProfileController::class, 'update'])->name('admin.profile.update');
 
 // classes: 
 Route::get('/classes', function () {
     return view('admin/classes');
 });
+
+// dashboard: 
+Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard.index');
+
 
 
 // User: 

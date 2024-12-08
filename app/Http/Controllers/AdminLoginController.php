@@ -9,7 +9,7 @@ class AdminLoginController extends Controller
 {
     public function index()
     {
-        return view('admin.login');
+        return view('admin.login.index');
     }
 
     public function store(Request $request)
@@ -21,9 +21,18 @@ class AdminLoginController extends Controller
         $credentials = $request->only("gym_mail", "password");
         if (Auth::guard('gym')->attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+            return redirect()->intended(route("admin.dashboard.index"));
         }
-        return redirect(route("admin.login"))
+        return redirect(route("admin.login.index"))
             ->with("error", "Login failed");
     }
+
+    public function destroy(Request $request)
+    {
+        Auth::guard('gym')->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('admin.login.index');
+    }
+
 }
