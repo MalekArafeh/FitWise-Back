@@ -11,17 +11,17 @@ class classesController extends Controller
     {
         $AllTrainer =Trainer::all();
         $allclasses =classes::all();
-        return view("admin.classes.index", ['classes' => $allclasses,'coaches' => $allclasses]);
+        return view("admin.classes.index", ['classes' => $allclasses,'coaches' => $AllTrainer]);
     }
 
     public function store(Request $request)
     {
         $attributes = request()->validate([
-            'Name' => ['required', 'string', 'max:255'],
-            'Time' => ['required', 'string', 'email', 'max:255'],
+            //'Name' => ['required', 'string', 'max:255'],
+          //  'Time' => ['required', 'string', 'email', 'max:255'],
            // 'Date' => ['required', 'max:10', 'min:10'],
           //  'password' => ['required', 'min:8'],
-            'Date' => ['required', 'date'],
+            //'Date' => ['required', 'date'],
             //'expiration_date' => ['required', 'date'],
         ]);
         $class = classes::create([
@@ -29,7 +29,7 @@ class classesController extends Controller
             'Time' => $request->Time,
             'Date' => $request->Date,
         ]);
-        $class->Trainer()->attach($request->Trainer);
+        $class->trainers()->attach($request->coach);
         
         return to_route("admin.classes.index");
     }

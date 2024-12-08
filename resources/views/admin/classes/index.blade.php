@@ -54,13 +54,12 @@
                         @foreach ($classes as $class)
                         
                         <tr>
-                            <td><img src={{url('admin\dist\img\yazan.jpg')}} class="img-circle elevation-2" alt="User Image"></td>
                             <td>{{ $counter }}</td> 
                             <td>{{$class->Name}}</td>
 
                             <td>{{$class->Time}}</td>
                             <td>{{$class->Date}}</td>
-                            <td>{{$class->expiration_date}}</td>
+                          
                            <td><a  class="edit-btn" id="3" href="{{route('admin.classes.edit',$class->id)}}">Edit</a> 
                             <form style="display:inline;" action="{{route('admin.classes.destroy',$class->id)}}" method="POST">
                                 @csrf
@@ -98,10 +97,11 @@
                         <label for="">Name</label>
                         <input name="Name" type="text" class="inputpopup" placeholder=" Enter member name">
                       <label for="">coach</label>
-                      <select name="" id="">
+                      <br>
+                      <select name="coach" id="">
                         @foreach ($coaches as $coach)
                             <option name="" value="{{$coach->id}}" > {{$coach->Name}}</option>
-                            @endforeach
+                        @endforeach
                         </select>
                           
                                     
