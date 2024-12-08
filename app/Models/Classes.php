@@ -8,7 +8,7 @@ class Classes extends Model
 {
     //
     protected $fillable = ['class_Name', 'class_Schedual'
-    ,'class_Location','class_Capacity','trainer_ID'];
+    ,'class_Location','class_Capacity','trainer_ID','time'];
 
     protected $table = 'classes';
 

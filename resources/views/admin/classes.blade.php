@@ -208,7 +208,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div><!-- /.container-fluid -->
     </section>
     <!-- Main content -->
-    <section class="content">
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    {{-- <section class="content">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-3">
@@ -279,7 +295,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
-    </section>
+    </section> --}}
   <!-- /.content-wrapper -->
   
 </div>

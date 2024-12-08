@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\GymPlanController;
 
+use App\Http\Controllers\ClassesController;
+
 use App\Http\Controllers\GymMemberController;
 use App\Http\Controllers\HealthController;
 use App\Http\Controllers\HomeController;
@@ -44,9 +46,9 @@ Route::delete('/admin/plan/{id}', [GymPlanController::class, 'destroy'])->name('
 // Route::get('/Admin_profile_page', [TestController::class, 'testAction']);
 
 // classes: 
-Route::get('/classes', function () {
-    return view('admin/classes');
-});
+Route::get('admin/classes', [ClassesController::class, 'index'])->name('admin.classes.index');
+Route::post('admin/classes', [ClassesController::class, 'store'])->name('admin.classes.store');
+
 
 
 // User: 

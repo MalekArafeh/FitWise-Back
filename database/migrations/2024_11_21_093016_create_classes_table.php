@@ -16,10 +16,10 @@ return new class extends Migration
             $table->string('class_Name');
             $table->date('class_Schedual');
             $table->string('class_Location');
-            $table->string('class_Capacity');
-            $table->foreignId('trainer_ID')
-                  ->constrained('trainer','trainer_ID')
-                  ->onDelete('cascade');
+            $table->string('time');
+            // $table->foreignId('trainer_ID')
+            //       ->constrained('trainer','trainer_ID')
+            //       ->onDelete('cascade');
 
 
 
