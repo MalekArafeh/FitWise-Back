@@ -1,4 +1,6 @@
 /*Make calories result visible*/
+
+
 document.getElementById("caloriesCalc").addEventListener("click", function (x) {
     console.log('tmm');
     x.preventDefault();

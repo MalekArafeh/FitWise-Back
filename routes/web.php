@@ -53,9 +53,14 @@ Route::post('/login', [GymMemberController::class, 'postLogin'])->name('user.log
 
 // Route::post('/', [RegistrationController::class, 'store']);
 
-Route::view('/health/{id}','user.health')->name('health');
+// Route::view('/health/{id}','user.health')->name('health');
+Route::get('/health/{id}',[HealthController::class,'index'])->name('health');
+
 Route::view('/home/{id}', 'user.home')->name('home');
 Route::view('/schedule', 'user.schedule');
 Route::get('/profile', [ProfileController::class, 'index']);
 Route::get('/profile/{id}', [ProfileController::class, 'index'])->name('profile.show');
 Route::put('/profile/{id}', [ProfileController::class, 'update'])->name('profile.update');
+
+
+
