@@ -70,17 +70,19 @@
             See full schedule</a
           >
         </div>
-        <div class="dark-border row">
-          <div class="col-8">
-            <span class="headings">Body Combat with Coach Naser</span>
-            <br />
-            <span class="text"
-              >From 5:00 PM to 6:00 PM - Main GGX studio</span
-            >
+        @foreach($classes as $class)
+          <div class="dark-border row">
+            <div class="col-8">
+              <span class="headings">{{$class->Name}} with {{$class->trainers->first()->Name}}</span>
+              <br />
+              <span class="text"
+                >From {{$class->start_time}} to {{$class->end_time}}</span
+              >
+            </div>
+            <span class="col text center-left">{{$class->date}}</span>
           </div>
-          <span class="col text center-left">Today</span>
-        </div>
-        <div class="dark-border row">
+        @endforeach  
+        {{-- <div class="dark-border row">
           <div class="col-8">
             <span class="headings">Kick Boxing with coach Tamara</span>
             <br />
@@ -89,7 +91,7 @@
             >
           </div>
           <span class="col text center-left">Tomorrow</span>
-        </div>
+        </div> --}}
       </div>
     </div>
   </section>
