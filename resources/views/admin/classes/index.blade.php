@@ -108,10 +108,10 @@
                                         
                     </div>
                     <div>
-                      <label for="">Date </label>
-                        <input name="Date" type="date" class="inputpopup" placeholder=" Enter date">
-                        <label for="">Time </label>
-                        <input name="Time" type="text" class="inputpopup" placeholder=" Enter time">
+                      <label for="">Start </label>
+                        <input name="start" type="datetime-local" class="inputpopup" placeholder=" Enter date">
+                        <label for="">End </label>
+                        <input name="end" type="datetime-local" class="inputpopup" placeholder=" Enter time">
                  
                         <div style=" margin-top: 20px; text-align: right;">
                           <button class="edit-btn">Add class</button>

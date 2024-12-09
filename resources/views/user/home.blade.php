@@ -61,7 +61,7 @@
         <div class="row">
           <span class="headings col">Upcoming Classes</span>
           <a
-            href="{{asset('/schedule')}}"
+            href="{{route('user.schedule.index')}}"
             class="col center-left blk-text text"
             ><i
               class="fa-solid fa-calendar blk-text"

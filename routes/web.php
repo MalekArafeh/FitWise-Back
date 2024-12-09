@@ -13,6 +13,7 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MemberRegController;
 use App\Http\Controllers\AdminLoginController;
+use App\Http\Controllers\user\FullSceduleController;
 use Illuminate\Support\Facades\Route;
 
 //Admin: 
@@ -67,7 +68,7 @@ Route::post('/login', [GymMemberController::class, 'postLogin'])->name('user.log
 
 Route::view('/health', 'user.health');
 Route::view('/home/{id}', 'user.home')->name('home');
-Route::view('/schedule', 'user.schedule');
+Route::get('/schedule', [FullSceduleController::class, 'index'])->name('user.schedule.index');
 Route::get('/profile', [ProfileController::class, 'index']);
 Route::get('/profile/{id}', [ProfileController::class, 'index'])->name('profile.show');
 Route::put('/profile/{id}', [ProfileController::class, 'update'])->name('profile.update');
