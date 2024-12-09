@@ -68,7 +68,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="Classes_Page.html" class="nav-link">
+                <a href="{{route('admin.classes.index')}}" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
                   <p>
                     Classes
