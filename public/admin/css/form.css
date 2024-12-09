@@ -1,0 +1,70 @@
+:root {
+  --color1: #729788;
+  --color2: #c9e983;
+  --white-color: #fdfcfa;
+  --dark-green: #394b46;
+  --red-color: #ea0404;
+  --yellow-color: #f5dc6b;
+  --break-point: 820px;
+}
+
+.edit-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.edit-form h4 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.edit-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-form label {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.edit-form .inputpopup {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.edit-form .inputpopup:focus {
+  border: 1px solid #729788;
+  box-shadow: 0 0 5px rgba(114, 151, 136, 0.5);
+}
+
+.edit-form .edit-btn {
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  font-size: 1rem;
+  color: var(--dark-green);
+  background-color: var(--yellow-color);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.edit-form .edit-btn:hover {
+  background-color: var(--yellow-color);
+}

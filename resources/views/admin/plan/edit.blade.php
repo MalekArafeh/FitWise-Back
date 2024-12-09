@@ -1,11 +1,13 @@
 @extends('layout.App')
 @section('title') Edit plans @endsection
 @section('titlePage')Edit plans page @endsection
-
+@section('css')
+  <link rel="stylesheet" href="{{asset('/admin/css/form.css')}}">
+@endsection
 @section('content')
 
     
-<div class="p">
+<div class="edit-form">
 
       <h4>Edit plan</h4>
       <form action="{{route('admin.plans.update', $plan->id)}}" method="post">
