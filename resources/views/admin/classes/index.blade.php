@@ -55,8 +55,8 @@
                         
                         <tr>
                             <td>{{ $counter }}</td> 
-                            <td>{{$class->Name}}</td>
-
+                            <td class="yazan">{{$class->Name}}</td>
+                            <td>{{$class->trainers->first()->Name}}</td>
                             <td>{{$class->Time}}</td>
                             <td>{{$class->Date}}</td>
                           
