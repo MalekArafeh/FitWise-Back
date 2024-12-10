@@ -98,15 +98,27 @@
                             <div>
                                 <label for="">Name</label>
                                 <input name="plan_Name" type="text" class="inputpopup" placeholder=" name ">
+                                @error('plan_Name')
+                                  <div class="error">{{ $message }}</div>
+                                @enderror
                                 <label for="">plan_Period</label>
                                 <input name="plan_Period" type="number" class="inputpopup" placeholder="  time">
+                                @error('plan_Period')
+                                <div class="error">{{ $message }}</div>
+                              @enderror
         
                             </div>
                             <div>
                                 <label for="">price</label>
                                 <input name="plan_Price" type="number" class="inputpopup" placeholder="  0.jod ">
+                                @error('plan_Price')
+                                  <div class="error">{{ $message }}</div>
+                                @enderror
                                 <label for="">Description</label>
                                 <input name="plan_Description" type="text" class="inputpopup" placeholder="  Description">
+                                @error('plan_Description')
+                                  <div class="error">{{ $message }}</div>
+                                @enderror
                                 <div>
                                   <br>
                                   <button type="submit" class="edit-btn">Add plan</button>
