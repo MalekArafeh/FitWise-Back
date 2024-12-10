@@ -87,7 +87,7 @@
                 <!-- /.card -->
               </div>
               <!-- Add members-->
-              <div class="popupmm">
+              <div class="popupmm" style="{{ $errors->any() ? 'visibility:visible;' : 'visibility:hidden;' }}">
                 <div class="popup-cuntentmm">
                   <h4>Add classes</h4>
                   <form action="{{route('admin.add_classes.store')}}" method="POST">
@@ -96,6 +96,9 @@
                     <div>
                         <label for="">Name</label>
                         <input name="Name" type="text" class="inputpopup" placeholder=" Enter member name">
+                        @error('Name')
+                          <div class="error">{{ $message }}</div>
+                        @enderror
                       <label for="">coach</label>
                       <br>
                       <select name="coach" id="">
@@ -110,12 +113,17 @@
                     <div>
                       <label for="">Start </label>
                         <input name="start" type="datetime-local" class="inputpopup" placeholder=" Enter date">
+                        @error('start')
+                          <div class="error">{{ $message }}</div>
+                        @enderror
                         <label for="">End </label>
                         <input name="end" type="datetime-local" class="inputpopup" placeholder=" Enter time">
-                 
+                        @error('end')
+                          <div class="error">{{ $message }}</div>
+                        @enderror
                         <div style=" margin-top: 20px; text-align: right;">
                           <button class="edit-btn">Add class</button>
-                          <button class="butformcancel" id="close">cancel</button>
+                          <a href="{{route('admin.classes.index')}}" class="butformcancel" id="close">cancel</a>
                         </div>
                     </div>
                 </div>
