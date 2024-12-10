@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 Use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use App\Models\Gym;
 
 class AdminSeeder extends Seeder
 {
@@ -16,9 +17,9 @@ class AdminSeeder extends Seeder
     public function run(): void
     {
         DB:: table( 'gym') ->insert([
-            'gym_name' => 'hamzah',
-            'gym_mail' => 'alqurnehh@gmail.com',
-            'password'=> Hash::make('password'),
+            'gym_name' => 'hamzah4',
+            'gym_mail' => 'alqurneh@gmail.com',
+            'password'=> Hash::make('password1'),
         ]);
     }
 }
