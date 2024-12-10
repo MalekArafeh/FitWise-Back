@@ -89,7 +89,7 @@
               </div>
               <!-- Add members-->
            
-                    <div class="popupmm">
+                    <div class="popupmm" style="{{ $errors->any() ? 'visibility:visible;' : 'visibility:hidden;' }}">
                         <div class="popup-cuntentmm">
                           <h4>Add plan</h4>
                           <form action="{{route('admin.add_plan.store')}}"method="POST">
@@ -121,8 +121,8 @@
                                 @enderror
                                 <div>
                                   <br>
-                                  <button type="submit" class="edit-btn">Add plan</button>
-                                  <button class="butformcancel" id="close">cancel</button>
+                                  <button class="edit-btn">Add plan</button>
+                                  <a href="{{route('admin.plan.index')}}" class="butformcancel" id="close">cancel</a>
                               </div>
                             </div>
                             

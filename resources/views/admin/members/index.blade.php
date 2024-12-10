@@ -89,7 +89,7 @@
                 <!-- /.card -->
               </div>
               <!-- Add members-->
-              <div class="popupmm">
+              <div class="popupmm" style="{{ $errors->any() ? 'visibility:visible;' : 'visibility:hidden;' }}">
                 <div class="popup-cuntentmm">
                   <h4>Add Member</h4>
                   <form action="{{route('admin.add_member.store')}}" method="POST">
@@ -144,7 +144,7 @@
                         
                         <div style=" margin-top: 20px; text-align: right;">
                           <button class="edit-btn">Add Member</button>
-                          <button class="butformcancel" id="close">cancel</button>
+                          <a href="{{route('admin.members.index')}}" class="butformcancel" id="close">cancel</a>
                         </div>
                     </div>
                 </div>
