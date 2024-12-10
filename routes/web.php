@@ -55,10 +55,10 @@ Route::put('/admin/profile', [AdminProfileController::class, 'update'])->name('a
 
 // classes: 
 Route::get('/admin/classes', [classesController::class, 'index'])->name('admin.classes.index');
-Route::put('/admin/classes/{id}', [CoachController::class, 'update'])->name('admin.classes.update');
-Route::get('/admin/classes/{id}/edit',  [CoachController::class, 'edit'])->name('admin.classes.edit');
-Route::post('/admin/classes', [CoachController::class, 'store'])->name('admin.add_classes.store');
-Route::delete('/admin/classes/{id}', [CoachController::class, 'destroy'])->name('admin.classes.destroy');
+Route::put('/admin/classes/{id}', [classesController::class, 'update'])->name('admin.classes.update');
+Route::get('/admin/classes/{id}/edit',  [classesController::class, 'edit'])->name('admin.classes.edit');
+Route::post('/admin/classes', [classesController::class, 'store'])->name('admin.add_classes.store');
+Route::delete('/admin/classes/{id}', [classesController::class, 'destroy'])->name('admin.classes.destroy');
 
 // dashboard: 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard.index');
