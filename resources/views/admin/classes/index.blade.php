@@ -95,7 +95,7 @@
                             <!-- /.card -->
                         </div>
                         <!-- Add members-->
-                        <div class="popupmm">
+                        <div class="popupmm" style="{{ $errors->any() ? 'visibility:visible;' : 'visibility:hidden;' }}">
                             <div class="popup-cuntentmm">
                                 <h4>Add classes</h4>
                                 <form action="{{ route('admin.add_classes.store') }}" method="POST">
