@@ -23,9 +23,9 @@
         </div>
         <div class="d-flex  justify-content-center pt-5">
           <div class="weight p-3">
-            Current Weight: <br>{{$gym_member->weight}} Kg
+            current Weight: <br>{{$gym_member->weight}} Kg
           </div>
-          <div class="height p-3">Current Height <br> {{$gym_member->height}} Cm </div>
+          <div class="height p-3">Current height <br> {{$gym_member->height}} Cm </div>
         </div>
         <div class="email text-center">Email: {{$gym_member->email}} </div> 
 <!-- الزر لفتح النافذة المنبثقة -->
@@ -55,9 +55,8 @@
           </div>
           <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" value="{{ $gym_member->email }}"disabled>
+            <input type="email" class="form-control" id="email" name="email" value="{{ $gym_member->email }}">
           </div>
-
           <div class="mb-3">
             <label for="" class="form-label">weight</label>
             <input type="tel" class="form-control" id="weight" name="weight" value="{{ $gym_member->weight }}" >

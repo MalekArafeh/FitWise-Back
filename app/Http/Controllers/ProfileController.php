@@ -26,7 +26,6 @@ class ProfileController extends Controller
     public function update(Request $request, $id)
     {
         $gym_member = GymMember::findOrFail($id);
-        dd($gym_member);
 
         // تحقق من البيانات
         $request->validate([
@@ -34,7 +33,6 @@ class ProfileController extends Controller
             'email' => ['required', 'email', 'max:255'],
             'weight' => ['required', 'string', 'max:255'],
             'height' => ['required', 'string', 'max:255'],
-
             'picture' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif']
         ]);
 
@@ -43,9 +41,6 @@ class ProfileController extends Controller
         $gym_member->email = $request->email;
         $gym_member->weight = $request->weight;
         $gym_member->height = $request->height;
-        dd($gym_member);
-
-
 
         // إذا تم رفع صورة جديدة
         if ($request->hasFile('picture')) {
@@ -57,6 +52,7 @@ class ProfileController extends Controller
             $imagePath = $request->file('picture')->store('profile_images', 'public');
             $gym_member->picture = $imagePath;
         }
+
 
         $gym_member->save();
 
