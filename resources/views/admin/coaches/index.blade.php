@@ -99,7 +99,7 @@
                             <!-- /.card -->
                         </div>
                         <!-- Add members-->
-                        <div class="popupmm">
+                        <div class="popupmm" >
                             <div class="popup-cuntentmm">
                                 <h4>Add Coach</h4>
                                 <form action="{{ route('admin.add_coaches.store') }}" method="POST">
@@ -107,26 +107,39 @@
                                     <div class="popupform">
                                         <div>
                                             <label for="">Name</label>
-                                            <input name="Name" type="text" class="inputpopup"
-                                                placeholder=" Enter coach name">
+                                            <input name="Name" type="text" class="inputpopup" placeholder=" Enter coach name">
+                                            @error('Name')
+                                                <div class="error">{{ $message }}</div>
+                                            @enderror   
                                             <label for="">Phone number</label>
                                             <input name="Phone" type="tel" class="inputpopup"
                                                 placeholder=" Enter phone number">
+                                                @error('Phone')
+                          <div class="error">{{ $message }}</div>
+                        @enderror
                                             <label for="">Email</label>
                                             <input name="Email" type="mail" class="inputpopup"
                                                 placeholder=" Enter email">
+                                                @error('Email')
+                          <div class="error">{{ $message }}</div>
+                        @enderror
                                         </div>
 
                                         <div>
                                             <label for="">Password</label>
                                             <input name="password" type="password" class="inputpopup">
+                                            @error('password')
+                          <div class="error">{{ $message }}</div>
+                        @enderror
                                             <label for="">availability</label>
                                             <input name="availability" type="text" class="inputpopup"
                                                 placeholder=" Enter availability">
-
+                                                @error('availability')
+                          <div class="error">{{ $message }}</div>
+                        @enderror
                                             <div style=" margin-top: 20px; text-align: right;">
                                                 <button class="edit-btn">Add Coach</button>
-                                                <button class="butformcancel" id="close">cancel</button>
+                                                <a href="admin.coaches.index" class="butformcancel" id="close">cancel</a>
                                             </div>
                                         </div>
                                     </div>
