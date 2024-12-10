@@ -44,7 +44,7 @@ class GymPlanController extends Controller
             'plan_Description' => ['required', 'string', 'max:255'],
             'plan_Price' => ['required'],
         ]);
-        
+
         $edit_plan->update([
             'plan_Name' => $request->plan_Name,
             'plan_Description' => $request->plan_Description,
@@ -60,5 +60,11 @@ class GymPlanController extends Controller
     {
         Plan::find($id)->delete();
         return to_route("admin.plan.index");
+    }
+
+    public function show($id)
+    {
+        $plan = Plan::findOrFail($id);
+        return response()->json($plan);
     }
 }

@@ -132,17 +132,11 @@ hr {
 #greeting {
   display: flex; /* Ensure the element is displayed */
   visibility: visible; /* Ensure the element is visible */
-  z-index: 3;
   position: relative;
   margin-left: 5%;
   margin-top: 2%;
   color: var(--blk-color);
   display: flex; /* Ensure the element is displayed */
-  visibility: visible; /* Ensure the element is visible */
-  z-index: 3;
-  position: relative;
-  margin-left: 5%;
-  margin-top: 2%;
   color: var(--blk-color);
 }
 
@@ -688,4 +682,24 @@ select {
   margin-top: 4%;
   color: var(--blk-color);
   font-size: 25px;
+}
+
+#view-membership-popup {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.popup-membership-content {
+  margin: 13%;
+  justify-self: center;
+  width: 70%;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
 }

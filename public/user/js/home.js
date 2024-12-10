@@ -23,3 +23,25 @@ function busynessIndicator(maxCapacity) {
 document.addEventListener("DOMContentLoaded", () => {
   busynessIndicator(250);
 });
+
+function showPlanDetails(planId) {
+  $.ajax({
+    url: `/plan/${planId}`,
+    type: "GET",
+    success: function (planData) {
+      $("#planName").text(planData.plan_Name);
+      $("#planPrice").text(planData.plan_Price);
+      $("#planPeriod").text(planData.plan_Period);
+      $("#planDescription").text(planData.plan_Description);
+
+      $("#view-membership-popup").show();
+    },
+    error: function (error) {
+      alert("Faild to fetch plan data");
+    },
+  });
+}
+
+function closePopup() {
+  $("#view-membership-popup").hide();
+}

@@ -34,6 +34,7 @@ Route::put('admin/plan/{id}', [GymPlanController::class, 'update'])->name('admin
 Route::get('/admin/plan/{id}/edit',  [GymPlanController::class, 'edit'])->name('admin.plan.edit');
 Route::post('/admin/plan', [GymPlanController::class, 'store'])->name('admin.add_plan.store');
 Route::delete('/admin/plan/{id}', [GymPlanController::class, 'destroy'])->name('admin.plan.destroy');
+Route::get('/plan/{id}', [GymPlanController::class, 'show'])->name('admin.plan.show');
 
 // route::put('admin/plan/{id}', [GymMemberController::class, 'update'])->name('admin.members.update');
 // Route::get('/admin/mem/{id}/edit', [GymMemberController::class, 'edit'])->name('admin.members.edit');

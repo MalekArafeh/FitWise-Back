@@ -17,7 +17,6 @@
       <div class="busyness bar"></div> 
     </div>
   </section>
-
   <br />
   <section class="margin-top">
     <div class="row">
@@ -28,15 +27,14 @@
           <div class="col-8">
             <div class="dark-border row">
               <span class="headings">{{$plan->plan_Name}}</span>
-              <br />
+              <br/>
               <span class="text"
                 ><i class="fa-solid fa-calendar blk-text"></i> Expires in
-                {{$plan->plan_Period}} month from {{$member->date_of_join}}</span
-              >
+                {{$plan->plan_Period}} month from {{$member->date_of_join}}</span>
             </div>
           </div>
           <div class="col center-left">
-            <button class="btn btn-warning">View</button>
+            <button class="btn btn-warning" onclick="showPlanDetails({{$plan->id}})">View</button>
           </div>
         </div>
         @endforeach
@@ -99,11 +97,22 @@
     </div>
   </section>
 
-  <div class="view-membership-popup">
-    
+  <div id="view-membership-popup">
+    <div class="popup-membership-content">
+      <h5>Plan</h5>
+      <p id="planName"></p>
+      <h5>Price</h5>
+      <p id="planPrice"></p>
+      <h5>Period</h5>
+      <p id="planPeriod"></p>
+      <h5>Description</h5>
+      <p id="planDescription"></p>
+      <button onclick="closePopup()">Close</button>
+    </div>
   </div>
 @endsection
 
 @section('scripts')
+  <script src="{{asset('admin/plugins/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('user/js/home.js')}}" defer></script>
 @endsection
