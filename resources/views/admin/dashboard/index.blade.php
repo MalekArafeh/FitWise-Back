@@ -375,7 +375,9 @@
                 <div class="col-lg-6">
                     <div class="card" style="background-color: 46554F">
                         <div class="card-header">
-                            <h3 class="card-title">Gym Members</h3>
+                            <a href="{{ route('admin.plan.index') }}">
+                                <h3 class="card-title">Plans</h3>
+                            </a>
                             <div class="card-tools">
                                 <div class="input-group input-group-sm" style="width: 150px;">
                                     <input type="text" name="table_search" class="form-control float-right"
@@ -393,12 +395,10 @@
                             <table class="table table-hover text-nowrap">
                                 <thead>
                                     <tr>
-                                        <th>ID plan</th>
                                         <th>Name</th>
                                         <th>time</th>
                                         <th>price</th>
                                         <th>Description</th>
-                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -407,15 +407,67 @@
                                     @endphp
                                     @foreach ($plans as $plan)
                                         <tr>
-                                            <td>{{ $counter }}</td>
                                             <td>{{ $plan->plan_Name }}</td>
                                             <td>{{ $plan->plan_Period }}</td>
                                             <td> $ {{ $plan->plan_Price }}</td>
                                             <td>{{ $plan->plan_Description }}</td>
-                                            <td><a class="edit-btn"
-                                                    href="{{ route('admin.plan.edit', $plan->id) }}">Edit</a>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+
+                    <!-- /.card -->
+                    {{-- <div class="card" style="background-color: 46554F">
+                        <div class="card-header">
+                            <h3 class="card-title">Gym coachs</h3>
+
+                            <div class="card-tools">
+                                <div class="input-group input-group-sm" style="width: 150px;">
+                                    <input type="text" name="table_search" class="form-control float-right"
+                                        placeholder="Search">
+
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-default">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body table-responsive p-0">
+                            <table class="table table-hover text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <td>Picture</td>
+                                        <th>Coach Id</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>availability</th>
+                                        <th>Actions</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($coaches as $coach)
+                                        <tr>
+                                            <td><img src={{ url('admin\dist\img\yazan.jpg') }}
+                                                    class="img-circle elevation-2" alt="User Image"></td>
+                                            <td>{{ $counter }}</td>
+                                            <td>{{ $coach->Name }}</td>
+                                            <td>{{ $coach->Email }}</td>
+
+                                            <td>{{ $coach->Phone }}</td>
+                                            <td>{{ $coach->availability }}</td>
+                                            <td><a class="edit-btn" id="3"
+                                                    href="{{ route('admin.coaches.edit', $coach->id) }}">Edit</a>
                                                 <form style="display:inline;"
-                                                    action="{{ route('admin.plan.destroy', $plan->id) }}" method="POST">
+                                                    action="{{ route('admin.coaches.destroy', $coach->id) }}"
+                                                    method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="edit-btn1"><svg
@@ -435,89 +487,19 @@
                                             $counter++; // Increment counter
                                         @endphp
                                     @endforeach
+
+
+
                                 </tbody>
                             </table>
                         </div>
                         <!-- /.card-body -->
-                    </div>
-                    <!-- /.card -->
+                    </div> --}}
                 </div>
-                <!-- /.card -->
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Coaches</h3>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th style="width: 10px">#</th>
-                                    <th>Coaches</th>
-                                    <th>Progress</th>
-                                    <th style="width: 40px">Label</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>Update software</td>
-                                    <td>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                                        </div>
-                                    </td>
-                                    <td><span class="badge bg-danger">55%</span></td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td>Clean database</td>
-                                    <td>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar bg-warning" style="width: 70%"></div>
-                                        </div>
-                                    </td>
-                                    <td><span class="badge bg-warning">70%</span></td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td>Cron job running</td>
-                                    <td>
-                                        <div class="progress progress-xs progress-striped active">
-                                            <div class="progress-bar bg-primary" style="width: 30%"></div>
-                                        </div>
-                                    </td>
-                                    <td><span class="badge bg-primary">30%</span></td>
-                                </tr>
-                                <tr>
-                                    <td>4.</td>
-                                    <td>Fix and squish bugs</td>
-                                    <td>
-                                        <div class="progress progress-xs progress-striped active">
-                                            <div class="progress-bar bg-success" style="width: 90%"></div>
-                                        </div>
-                                    </td>
-                                    <td><span class="badge bg-success">90%</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- /.card-body -->
-                    <div class="card-footer clearfix">
-                        <ul class="pagination pagination-sm m-0 float-right">
-                            <li class="page-item"><a class="page-link" href="#">«</a></li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">»</a></li>
-                        </ul>
-                    </div>
-                </div>
+                <!-- /.col-md-6 -->
             </div>
-            <!-- /.col-md-6 -->
-        </div>
-        <!-- /.row -->
-    </div><!-- /.container-fluid -->
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
     </div>
