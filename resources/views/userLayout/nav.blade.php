@@ -17,7 +17,7 @@
     <!--nav bar -->
     <nav class="navbar navbar-expand-lg navbar-index">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{{url('/home')}}">
+        <a class="navbar-brand" href="{{route('home', ['id' => Auth::guard('gym_members')->user()->id])}}">
           <img
             src="{{asset('img/logo.svg')}}"
             alt="Logo"

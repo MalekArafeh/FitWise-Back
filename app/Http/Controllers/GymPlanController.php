@@ -62,4 +62,10 @@ class GymPlanController extends Controller
         Plan::find($id)->delete();
         return to_route("admin.plan.index");
     }
+
+    public function show($id)
+    {
+        $plan = Plan::findOrFail($id);
+        return response()->json($plan);
+    }
 }

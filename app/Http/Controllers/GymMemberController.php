@@ -7,6 +7,8 @@ use App\Models\GymMember;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+
 
 
 class GymMemberController extends Controller
@@ -63,7 +65,7 @@ class GymMemberController extends Controller
             $request->session()->regenerate();
             $userId = Auth::guard('gym_members')->user()->id;
             // dd($userId);
-            return redirect()->route('user.home', ['id' => $userId]);
+            return redirect()->route('home', ['id' => $userId]);
             // dd('helloo');
             // return view('user.home');
         }

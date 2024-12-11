@@ -116,5 +116,5 @@
 
 @section('scripts')
   <script src="{{asset('admin/plugins/jquery/jquery.min.js')}}"></script>
-  <script src="{{asset('user/js/home.js')}}" defer></script>
+  <script src="{{asset('user/js/home.js')}}"></script>
 @endsection

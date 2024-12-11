@@ -56,7 +56,7 @@
                                             @endphp
                                             @foreach ($gym_members as $member)
                                                 <tr>
-                                                    <td><img src={{ url('admin\dist\img\yazan.jpg') }}
+                                                    <td><img src="{{ $member->picture ? asset('storage/' . $member->picture) : asset('img/profile.jpg') }}"
                                                             class="img-circle elevation-2" alt="User Image"></td>
                                                     <td>{{ $counter }}</td>
                                                     <td>{{ $member->name }}</td>
