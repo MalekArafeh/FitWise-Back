@@ -31,6 +31,9 @@
                 @csrf
                 <input type="email" id="email" name="gym_mail"class="mb-4 mt-4" placeholder="Email" required><br>
                 <input type="password" id="password" name="password" placeholder="Password" required><br>
+                @if($errors->any())
+                    <p class="error">{{$errors->first()}}</p>
+                @endif
                 <button class="btn btn-warning mt-4">Login</button>
             </form>
         </div>

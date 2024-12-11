@@ -56,11 +56,15 @@
                             <td>{{ $counter }}</td> 
 
 
+
+
                             <td>{{$plan->plan_Name}}</td>
                             <td>{{$plan->plan_Period}}</td>
                             
                             <td> jd.{{$plan->plan_Price}}</td>
                             <td>{{$plan->plan_Description}}</td>
+                           <td><a  class="edit-btn"  href="{{route('admin.plan.edit',$plan->id)}}">Edit</a> 
+                            <form style="display:inline;" action="{{route('admin.plan.destroy',$plan->id)}}" method="POST">
                            <td><a  class="edit-btn"  href="{{route('admin.plan.edit',$plan->id)}}">Edit</a> 
                             <form style="display:inline;" action="{{route('admin.plan.destroy',$plan->id)}}" method="POST">
                                 @csrf
@@ -89,7 +93,7 @@
               </div>
               <!-- Add members-->
            
-                    <div class="popupmm">
+                    <div class="popupmm" style="{{ $errors->any() ? 'visibility:visible;' : 'visibility:hidden;' }}">
                         <div class="popup-cuntentmm">
                           <h4>Add plan</h4>
                           <form action="{{route('admin.add_plan.store')}}"method="POST">
@@ -98,19 +102,31 @@
                             <div>
                                 <label for="">Name</label>
                                 <input name="plan_Name" type="text" class="inputpopup" placeholder=" name ">
+                                @error('plan_Name')
+                                  <div class="error">{{ $message }}</div>
+                                @enderror
                                 <label for="">plan_Period</label>
                                 <input name="plan_Period" type="number" class="inputpopup" placeholder="  time">
+                                @error('plan_Period')
+                                <div class="error">{{ $message }}</div>
+                              @enderror
         
                             </div>
                             <div>
                                 <label for="">price</label>
                                 <input name="plan_Price" type="number" class="inputpopup" placeholder="  0.jod ">
+                                @error('plan_Price')
+                                  <div class="error">{{ $message }}</div>
+                                @enderror
                                 <label for="">Description</label>
                                 <input name="plan_Description" type="text" class="inputpopup" placeholder="  Description">
+                                @error('plan_Description')
+                                  <div class="error">{{ $message }}</div>
+                                @enderror
                                 <div>
                                   <br>
-                                  <button type="submit" class="edit-btn">Add plan</button>
-                                  <button class="butformcancel" id="close">cancel</button>
+                                  <button class="edit-btn">Add plan</button>
+                                  <a href="{{route('admin.plan.index')}}" class="butformcancel" id="close">cancel</a>
                               </div>
                             </div>
                             

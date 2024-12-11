@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\plan;
 use App\Models\GymMember;
 use Illuminate\Http\Request;
@@ -15,9 +16,9 @@ class GymMemberController extends Controller
      */
     public function index()
     {
-        $allplans =Plan::all();
+        $allplans = Plan::all();
         $members = GymMember::all();
-        return view("admin.members.index", ['gym_members' => $members,'plans'=>$allplans]);
+        return view("admin.members.index", ['gym_members' => $members, 'plans' => $allplans]);
     }
 
     /**
@@ -62,12 +63,12 @@ class GymMemberController extends Controller
             $request->session()->regenerate();
             $userId = Auth::guard('gym_members')->user()->id;
             // dd($userId);
-            return redirect()->route('home', ['id' => $userId]);
+            return redirect()->route('user.home', ['id' => $userId]);
             // dd('helloo');
             // return view('user.home');
         }
         // dd('hii');
-        return view('/user/login');
+        return redirect()->route('user.login')->withErrors(['Wrong credentials error', 'Wrong credentials']);
     }
     /**
      * Display the specified resource.
@@ -108,9 +109,9 @@ class GymMemberController extends Controller
             'phone' => $request->phone,
             'date_of_join' => $request->date_of_join,
             'expiration_date' => $request->expiration_date,
-            
+
         ]);
-        
+
 
 
         $edit_member->save();

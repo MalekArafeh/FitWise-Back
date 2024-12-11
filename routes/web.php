@@ -6,12 +6,11 @@ use App\Http\Controllers\CoachController;
 
 use App\Http\Controllers\GymMemberController;
 use App\Http\Controllers\HealthController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\user\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\MemberRegController;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\DashboardController;
@@ -41,6 +40,7 @@ Route::put('admin/plan/{id}', [GymPlanController::class, 'update'])->name('admin
 Route::get('/admin/plan/{id}/edit',  [GymPlanController::class, 'edit'])->name('admin.plan.edit');
 Route::post('/admin/plan', [GymPlanController::class, 'store'])->name('admin.add_plan.store');
 Route::delete('/admin/plan/{id}', [GymPlanController::class, 'destroy'])->name('admin.plan.destroy');
+Route::get('/plan/{id}', [GymPlanController::class, 'show'])->name('admin.plan.show');
 
 //coash:
 Route::get('/admin/coaches', [CoachController::class, 'index'])->name('admin.coaches.index');
@@ -68,14 +68,16 @@ Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('adm
 // User: 
 Route::Get('/', [RegistrationController::class, 'index']);
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('user.login');
+Route::get('/login/destroy', [LoginController::class, 'destroy'])->name('user.logout');
 // Route::post('/login', [LoginController::class, 'login'])->name('user.login');
-Route::post('/login', [GymMemberController::class, 'postLogin'])->name('user.login');
+Route::get('/login/check', [GymMemberController::class, 'postLogin'])->name('user.login.check');
 
 // Route::post('/', [RegistrationController::class, 'store']);
 
 Route::view('/health', 'user.health');
-Route::view('/home/{id}', 'user.home')->name('home');
+// Route::view('/home/{id}', 'user.home')->name('home');
+Route::get('/home/{id}', [HomeController::class, 'index'])->name('user.home');
 Route::view('/schedule', 'user.schedule');
 Route::get('/profile', [ProfileController::class, 'index']);
 Route::get('/profile/{id}', [ProfileController::class, 'index'])->name('profile.show');

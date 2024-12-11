@@ -25,7 +25,7 @@ class GymPlanController extends Controller
             'plan_Description' => $request->plan_Description,
             'plan_Period' => $request->plan_Period,
             'plan_Price' => $request->plan_Price,
-            
+
 
         ]);
 
@@ -45,7 +45,7 @@ class GymPlanController extends Controller
             'plan_Description' => ['required', 'string', 'max:255'],
             'plan_Price' => ['required'],
         ]);
-        
+
         $edit_plan->update([
             'plan_Name' => $request->plan_Name,
             'plan_Description' => $request->plan_Description,

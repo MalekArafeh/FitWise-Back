@@ -23,8 +23,8 @@ class AdminLoginController extends Controller
             $request->session()->regenerate();
             return redirect()->intended(route("admin.dashboard.index"));
         }
-        return redirect(route("admin.login.index"))
-            ->with("error", "Login failed");
+        return redirect(route("admin.login"))
+            ->withErrors(["Wrong credentials error", "Login failed"]);
     }
 
     public function destroy(Request $request)
@@ -34,5 +34,4 @@ class AdminLoginController extends Controller
         $request->session()->regenerateToken();
         return redirect()->route('admin.login.index');
     }
-
 }

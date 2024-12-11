@@ -15,17 +15,11 @@ class LoginController extends Controller
         return view('user.login');
     }
 
-    public function login(Request $request)
+    public function destroy(Request $request)
     {
-        // dd($request->all());
-        $credentials = $request->validate([
-            'mem_mail' => ['required', 'email'],
-            'mem_password' => ['required', 'min:8'],
-        ]);
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-            return redirect()->route('user.home')->with('success', 'You have been logged in!');
-        }
-        return redirect("/login")->withError('Oppes! You have entered invalid credentials');
+        Auth::guard('gym_members')->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('user.login');
     }
 }

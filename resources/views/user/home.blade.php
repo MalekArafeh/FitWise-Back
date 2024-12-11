@@ -8,9 +8,6 @@
   <style></style>
 @endsection
 
-@section('scripts')
-@endsection
-
 <!--Page content-->
 @section('content')
   <section class="status">
@@ -20,28 +17,28 @@
       <div class="busyness bar"></div> 
     </div>
   </section>
-
   <br />
   <section class="margin-top">
     <div class="row">
       <div class="col-md-5 col-11 radial center-block">
         <span class="headings col">Memberships</span>
+        @foreach ($plans as $plan)
         <div class="row">
           <div class="col-8">
             <div class="dark-border row">
-              <span class="headings">Pool Membership</span>
-              <br />
+              <span class="headings">{{$plan->plan_Name}}</span>
+              <br/>
               <span class="text"
-                ><i class="fa-solid fa-calendar blk-text"></i> Expires on
-                11/10/2024</span
-              >
+                ><i class="fa-solid fa-calendar blk-text"></i> Expires in
+                {{$plan->plan_Period}} month from {{$member->date_of_join}}</span>
             </div>
           </div>
           <div class="col center-left">
-            <button class="btn btn-warning">View</button>
+            <button class="btn btn-warning" onclick="showPlanDetails({{$plan->id}})">View</button>
           </div>
         </div>
-        <div class="row">
+        @endforeach
+        {{-- <div class="row">
           <div class="col-8">
             <div class="dark-border row">
               <span class="headings">Gym Membership</span>
@@ -55,7 +52,7 @@
           <div class="col center-left">
             <button class="btn btn-danger">View</button>
           </div>
-        </div>
+        </div> --}}
       </div>
       <div class="col-md-5 col-11 radial center-block">
         <div class="row">
@@ -99,4 +96,23 @@
       <img src="{{asset('img/promo2.png')}}" alt="" class="banner-img" />
     </div>
   </section>
+
+  <div id="view-membership-popup">
+    <div class="popup-membership-content">
+      <h5>Plan</h5>
+      <p id="planName"></p>
+      <h5>Price</h5>
+      <p id="planPrice"></p>
+      <h5>Period</h5>
+      <p id="planPeriod"></p>
+      <h5>Description</h5>
+      <p id="planDescription"></p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
+@endsection
+
+@section('scripts')
+  <script src="{{asset('admin/plugins/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('user/js/home.js')}}" defer></script>
 @endsection
