@@ -76,7 +76,9 @@ Route::get('/login/check', [GymMemberController::class, 'postLogin'])->name('use
 
 // Route::post('/', [RegistrationController::class, 'store']);
 
-Route::view('/health', 'user.health');
+// Route::view('/health/{id}','user.health')->name('health');
+Route::get('/health/{id}', [HealthController::class, 'index'])->name('health');
+
 Route::get('/home/{id}', [HomeController::class, 'index'])->name('home');
 Route::get('/schedule', [FullSceduleController::class, 'index'])->name('user.schedule.index');
 Route::get('/profile', [ProfileController::class, 'index']);

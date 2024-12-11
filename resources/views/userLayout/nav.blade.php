@@ -76,12 +76,12 @@
               <a
                 class="nav-link active"
                 aria-current="page"
-                href="{{url('/home')}}"
+                href="{{ route('home', ['id' => Auth::guard('gym_members')->user()->id]) }}"
                 >Home</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url('/health')}}"
+              <a class="nav-link" href="{{ route('health', ['id' => Auth::guard('gym_members')->user()->id]) }}"
                 >Health</a
               >
             </li>
@@ -89,7 +89,7 @@
         </div>
       </div>
     </nav>
+    {{-- <span class="headings" id="greeting">Hello user</span> --}}
     <span class="headings" id="greeting">Hello {{Auth::guard('gym_members')->user()->name}}</span>
-    {{-- <span class="headings" id="greeting">Hello {{$gym_member->name}}</span> --}}
 
 </header>

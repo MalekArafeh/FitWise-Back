@@ -40,6 +40,10 @@
     margin-top: 15px;
 }
 
+.mb-3 label{
+    color: black;
+}
+
 @media (min-width: 1024px) {
     .box {
         width: 700px;
