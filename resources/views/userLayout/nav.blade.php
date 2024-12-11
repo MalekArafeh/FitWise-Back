@@ -89,7 +89,7 @@
         </div>
       </div>
     </nav>
-    <span class="headings" id="greeting">Hello user</span>
+    <span class="headings" id="greeting">Hello {{Auth::guard('gym_members')->user()->name}}</span>
     {{-- <span class="headings" id="greeting">Hello {{$gym_member->name}}</span> --}}
 
 </header>

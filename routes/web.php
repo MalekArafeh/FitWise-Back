@@ -12,6 +12,7 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminLoginController;
+use App\Http\Controllers\user\FullSceduleController;
 use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
@@ -76,9 +77,8 @@ Route::get('/login/check', [GymMemberController::class, 'postLogin'])->name('use
 // Route::post('/', [RegistrationController::class, 'store']);
 
 Route::view('/health', 'user.health');
-// Route::view('/home/{id}', 'user.home')->name('home');
-Route::get('/home/{id}', [HomeController::class, 'index'])->name('user.home');
-Route::view('/schedule', 'user.schedule');
+Route::get('/home/{id}', [HomeController::class, 'index'])->name('home');
+Route::get('/schedule', [FullSceduleController::class, 'index'])->name('user.schedule.index');
 Route::get('/profile', [ProfileController::class, 'index']);
 Route::get('/profile/{id}', [ProfileController::class, 'index'])->name('profile.show');
 Route::put('/profile/{id}', [ProfileController::class, 'update'])->name('profile.update');

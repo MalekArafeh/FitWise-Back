@@ -1,11 +1,13 @@
 @extends('layout.App')
 @section('title') Edit Coaches @endsection
 @section('titlePage')Edit Coaches page @endsection
-
+@section('css')
+  <link rel="stylesheet" href="{{asset('/admin/css/form.css')}}">
+@endsection
 @section('content')
 
     
-<div class="p">
+<div class="edit-form">
 
       <h4>Edit Coach</h4>
       <form action="{{route('admin.coaches.update', $coach->id)}}" method="post">

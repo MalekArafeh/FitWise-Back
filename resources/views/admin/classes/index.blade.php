@@ -86,58 +86,116 @@
                                             @endforeach
 
 
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!-- /.card-body -->
-                            </div>
-                            <!-- /.card -->
-                        </div>
-                        <!-- Add members-->
-                        <div class="popupmm" style="{{ $errors->any() ? 'visibility:visible;' : 'visibility:hidden;' }}">
-                            <div class="popup-cuntentmm">
-                                <h4>Add classes</h4>
-                                <form action="{{ route('admin.add_classes.store') }}" method="POST">
-                                    @csrf
-                                    <div class="popupform">
-                                        <div>
-                                            <label for="">Name</label>
-                                            <input name="Name" type="text" class="inputpopup"
-                                                placeholder=" Enter member name">
-                                            <label for="">coach</label>
-                                            <br>
-                                            <select name="coach" id="">
-                                                @foreach ($coaches as $coach)
-                                                    <option name="" value="{{ $coach->id }}"> {{ $coach->Name }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <label for="">Date </label>
-                                            <input name="Date" type="date" class="inputpopup"
-                                                placeholder=" Enter date">
-                                            <label for="">Time </label>
-                                            <input name="Time" type="text" class="inputpopup"
-                                                placeholder=" Enter time">
-                                            <div style=" margin-top: 20px; text-align: right;">
-                                                <button class="edit-btn">Add class</button>
-                                                <button class="butformcancel" id="close">cancel</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>
-                        <!-- /.col-md-6 -->
-                        <div class="col-lg-6">
-                        </div>
-                        <!-- /.col-md-6 -->
+                           
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+              </div>
+              <!-- Add members-->
+              <div class="popupmm" style="{{ $errors->any() ? 'visibility:visible;' : 'visibility:hidden;' }}">
+                <div class="popup-cuntentmm">
+                  <h4>Add classes</h4>
+                  <form action="{{route('admin.add_classes.store')}}" method="POST">
+                    @csrf
+                    <div class="popupform">
+                    <div>
+                        <label for="">Name</label>
+                        <input name="Name" type="text" class="inputpopup" placeholder=" Enter member name">
+                        @error('Name')
+                          <div class="error">{{ $message }}</div>
+                        @enderror
+                      <label for="">coach</label>
+                      <br>
+                      <select name="coach" id="">
+                        @foreach ($coaches as $coach)
+                            <option name="" value="{{$coach->id}}" > {{$coach->Name}}</option>
+                        @endforeach
+                        </select>
+                          
+                                    
+                                        
                     </div>
-                    <!-- /.row -->
-                </div><!-- /.container-fluid -->
+                    <div>
+                      <label for="">Start </label>
+                        <input name="start" type="datetime-local" class="inputpopup" placeholder=" Enter date">
+                        @error('start')
+                          <div class="error">{{ $message }}</div>
+                        @enderror
+                        <label for="">End </label>
+                        <input name="end" type="datetime-local" class="inputpopup" placeholder=" Enter time">
+                        @error('end')
+                          <div class="error">{{ $message }}</div>
+                        @enderror
+                        <div style=" margin-top: 20px; text-align: right;">
+                          <button class="edit-btn">Add class</button>
+                          <a href="{{route('admin.classes.index')}}" class="butformcancel" id="close">cancel</a>
+                        </div>
+                    </div>
+                </div>
+
+
+             
+              {{-- <div class="popupmmEdit">
+                <div class="popup-cuntentmm">
+                  <h4>Edit Member</h4>
+                  <form action="{{route('admin.members.update',1)}}" method="post">
+                    @csrf
+                 
+                    <div class="popupform">
+                    <div>
+                        <label for="">Name</label>
+                        <input name='name' type="text" class="inputpopup" placeholder="Enter Name">
+                        <label for="">Email</label>
+                        <input name='email' type="text"   class="inputpopup" placeholder=" Enter Email">
+
+                    </div>
+                    <div>
+                        <label name='date_of_join'  for="">Date Enrolled</label>
+                        <input type="date" class="inputpopup" placeholder="Enter Date Enrolled ">
+                        <label for="">Date Expiration</label>
+                        <input name='expiration_date'  type="date" class="inputpopup" placeholder="Enter Date Expiration ">
+
+                    </div>
+                </div>
+                <div class="popupform">
+                 
+                    <div>
+                        <br>
+                        <button class="edit-btn">Edit Member</button>
+                        <button class="butformcancel" id="close">cancel</button>
+                    </div>
+                </div>
+             
+
+                  
+
+                  </form>
+                  
+
+                  
+                </div>
+              </div> --}}
             </div>
-        @endsection
-        @section('scripts')
-            <script src={{ url('admin\members.js') }}></script>
-        @endsection
+
+            
+          </div>
+          <!-- /.col-md-6 -->
+          <div class="col-lg-6">
+            
+          
+          </div>
+          <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+
+@endsection
+@section('scripts')
+
+    <script src={{url('admin\members.js')}}></script>
+@endsection
+
