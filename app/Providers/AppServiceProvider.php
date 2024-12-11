@@ -23,5 +23,6 @@ class AppServiceProvider extends ServiceProvider
     {
         $gym_admin = Gym::find(1); 
         View::share('gym_admin', $gym_admin);
+        
     }
 }
