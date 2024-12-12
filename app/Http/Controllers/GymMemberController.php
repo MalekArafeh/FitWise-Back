@@ -25,8 +25,9 @@ public function importExcelData(request $request){
         'required',
         'file'],
     ]);
-    Excel::import(new membersImport,$request->file('import_file'));
+    Excel::import(new membersImport,$request->file('import-file'));
     return redirect()->back()->with('status','Imported Succfully');
+    
 
 }
 

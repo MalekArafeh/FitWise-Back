@@ -19,14 +19,14 @@
                                <div class="alert alert-success">{{session('status')}}</div>
                                    @endif
                                 <div class="card-body">
-                                    <form action="{{route('admin.members.index')}}"method="POST" enctype="multipart/form-data"></form>
-                                    @csrf
-                                    <div class="input-group">
-                                        <input type="file" name="import-file" class="form-control">
-                                        <a href="{{route('importExcelData.index')}}" type="submit" class="edit-btn" style="margin-left: 3px">Import</a>
-                                          <button class="edit-btn" id="popupmembers" style="margin-left: 3px">+</button>
-                                    </div>
-                                  
+                                    <form action="{{route('importExcelData')}}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="input-group">
+                                            <input type="file" name="import-file" class="form-control">
+                                            <button type="submit" class="edit-btn" style="margin-left: 3px">Import</button>
+                                            <button class="edit-btn" id="popupmembers" style="margin-left: 3px">+</button>
+                                        </div>
+                                        </form>
                                 </div>
 
 

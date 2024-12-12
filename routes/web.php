@@ -30,7 +30,7 @@ Route::get('/adminLogin/destroy', [AdminLoginController::class, 'destroy'])->nam
 
 // members: 
 Route::get('/admin/members', [GymMemberController::class, 'index'])->name('admin.members.index');
-Route::post('/admin/members', [GymMemberController::class, 'importExcelData'])->name('importExcelData.index');
+Route::post('/admin/members/import', [GymMemberController::class, 'importExcelData'])->name('importExcelData');
 Route::put('admin/members/{id}', [GymMemberController::class, 'update'])->name('admin.members.update');
 Route::get('/admin/members/{id}/edit', [GymMemberController::class, 'edit'])->name('admin.members.edit');
 Route::post('/admin/members', [GymMemberController::class, 'store'])->name('admin.add_member.store');

@@ -17,7 +17,7 @@ class membersImport implements ToCollection,WithHeadingRow
         foreach($rows as $row){
            $GymMember=GymMember::where('email',$row['email'])->first();
            if($GymMember){
-            GymMember->update([
+            GymMember::update([
                 'name'=>$row['name'],       
                 "date_of_join"=>$row['date_of_join'],
                 "expiration_date"=>$row['expiration_date'],
@@ -26,10 +26,13 @@ class membersImport implements ToCollection,WithHeadingRow
                     
            }else{
             GymMember::create([
-                'name'=>$row['name'],       
+                'name'=>$row['name'], 
+                "email"=>$row['email'],
+                
+
+                "phone"=>$row['phone'],   
                 "date_of_join"=>$row['date_of_join'],
                 "expiration_date"=>$row['expiration_date'],
-                "phone"=>$row['phone'],
                     ]);
            }
         }
