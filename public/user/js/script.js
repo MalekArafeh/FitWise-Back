@@ -48,10 +48,11 @@ function showCalc(evt, calcId) {
 
 
 // document.getElementById("caloriesCalc").addEventListener("click", calorie_calculator);
+document.getElementById("calories").style.display = "block";
 
 
 function calorie_calculator()
-{        document.getElementById("calories").style.display = "block";
+ { //       document.getElementById("calories").style.display = "block";
 
 
     console.log("Function executed"); // تأكيد التنفيذ
@@ -100,6 +101,7 @@ function calorie_calculator()
 }
 
 
+document.getElementById("protein").style.display = "block";
 
 function protein_calculator()
 {

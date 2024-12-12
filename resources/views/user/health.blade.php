@@ -148,7 +148,7 @@
           </button>
         </div>
       </div>
-      <div id="protein" class="col-md-2 center-menu">
+      <div id="protein" class="col-md-2 ">
         <div class="gradient-border">
         <span
           >Your Daily Protein Needs Are Set! 💪 <br>

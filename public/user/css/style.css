@@ -52,3 +52,18 @@
         margin: 20px;
     }
 }
+
+#password , #confirmation{
+    width: 300px;
+    border: 3px solid #4c5a4a69;
+    border-radius: 5px;
+    background-color: #ffffff00;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.456);
+}
+#userPassword{
+    display: block;
+
+}

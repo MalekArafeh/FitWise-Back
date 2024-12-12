@@ -12,6 +12,14 @@
   <!--page content-->
   @section('content')
     <div class="container d-flex justify-content-center ">
+      
+      
+      
+      
+      
+      
+      
+      
       <div class="box ">
         <div class="details d-flex justify-content-center">
         <img src="{{ $gym_member->picture ? asset('storage/' . $gym_member->picture) : asset('img/profile.jpg') }}" 
@@ -85,10 +93,48 @@
         <button type="button" class="btn btn-warning mb-2" data-bs-toggle="modal" data-bs-target="#editProfileModal">
     Edit Profile
 </button>
+
+
+
+              
+    
           {{-- <button type="button" class="btn btn-warning mb-2"><a class="nav-link p-1" href="">Edit</a></button> --}}
           {{-- <button type="button" class="btn btn-warning mb-2"><a class="nav-link p-1" href="">Save</a></button> --}}
-        </div>  
+        </div>
+        <div class='d-flex justify-content-center mt-5'>
+          <form action="{{ route('reset-password', ['id' => $gym_member->id]) }}"  method="POST">
+        @csrf <!-- CSRF Token -->
+        <div>
+            <input id="password" placeholder="New Password" name="password" type="password" required />
+        </div>
+        <div class="mt-3">
+            <input id="confirmation" placeholder="Confirm New Password" name="confirmation" type="password" required />
+        </div>
+        <div class="d-flex justify-content-center mt-3">
+            <button type="submit" class="btn btn-warning mb-2">
+                Save
+            </button>
+        </div>
+        @if (session('success'))
+        <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+      @endif
+
+
+      @if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
+    </form>
+      
+        </div>
+        
+
+          
       </div>
+      
     </div>
 @endsection
 

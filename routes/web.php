@@ -84,3 +84,4 @@ Route::get('/schedule', [FullSceduleController::class, 'index'])->name('user.sch
 Route::get('/profile', [ProfileController::class, 'index']);
 Route::get('/profile/{id}', [ProfileController::class, 'index'])->name('profile.show');
 Route::put('/profile/{id}', [ProfileController::class, 'update'])->name('profile.update');
+Route::post('/profile/{id}', [ProfileController::class, 'reset'])->name('reset-password');
