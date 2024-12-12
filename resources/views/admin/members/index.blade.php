@@ -144,12 +144,18 @@
                         @error('expiration_date')
                           <div class="error">{{ $message }}</div>
                         @enderror
-                        <label for="">Password</label>
-                        <input name="password" type="password" class="inputpopup" >
-                        @error('password')
-                          <div class="error">{{ $message }}</div>
-                        @enderror
-                        
+                        {{-- <label for="">Password</label> --}}
+                        <input 
+                            name="password" 
+                            type="password" 
+                            placeholder="fitwise" 
+                            class="inputpopup" 
+                            value="{{ old('password', 'fitwise1') }}" 
+                        hidden>
+                        {{-- @error('password')
+                        <div class="error">{{ $message }}</div>
+                        @enderror --}}
+                                                
                         
                         
                         <div style=" margin-top: 20px; text-align: right;">
