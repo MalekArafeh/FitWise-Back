@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\membersImport;
 use App\Models\plan;
 use App\Models\GymMember;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Maatwebsite\Excel\Facades\Excel;
+
 use Illuminate\Support\Facades\Storage;
 
 
@@ -16,7 +19,18 @@ class GymMemberController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+public function importExcelData(request $request){
+    $request->validate([
+        'import-file' => [ 
+        'required',
+        'file'],
+    ]);
+    Excel::import(new membersImport,$request->file('import_file'));
+    return redirect()->back()->with('status','Imported Succfully');
+
+}
+
+     public function index()
     {
         $allplans = Plan::all();
         $members = GymMember::all();
