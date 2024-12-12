@@ -66,8 +66,8 @@
     </div>
 </div>
 
-<h2 class="mt-5">Weight Tracker for 30 Days</h2>
-<canvas id="weightChart" width="400" height="200"></canvas>
+<div class="col-md-5 col-10 center-block"><h2 class="mt-5">Weight Tracker for 30 Days</h2>
+<canvas id="weightChart" width="400" height="200"></canvas></div>
     <!--Tabs-->
 
     <!--menu-->
