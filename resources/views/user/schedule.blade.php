@@ -14,7 +14,7 @@
 @endsection
 
 @section('content')
-  <section class="content" style="margin-top: 6%">
+  <section class="content" style="margin-top: 6%;">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-3">
@@ -40,7 +40,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-6" style="z-index:-2">
           <div class="card card-primary">
             <div class="card-body p-0">
               <div id="calendar"></div>
