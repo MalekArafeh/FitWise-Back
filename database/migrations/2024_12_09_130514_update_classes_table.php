@@ -19,6 +19,9 @@ return new class extends Migration
             $table->dropColumn('trainer_ID');
             $table->dropColumn('Time');
             $table->dropColumn('Date');
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
+
         });
     }
 

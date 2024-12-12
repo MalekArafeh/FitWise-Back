@@ -90,74 +90,80 @@
                                             @endforeach
 
 
-                           
-                      </tbody>
-                    </table>
-                  </div>
-                  <!-- /.card-body -->
-                </div>
-                <!-- /.card -->
-              </div>
-              <!-- Add members-->
-              <div class="popupmm" style="{{ $errors->any() ? 'visibility:visible;' : 'visibility:hidden;' }}">
-                <div class="popup-cuntentmm">
-                  <h4>Add Member</h4>
-                  <form action="{{route('admin.add_member.store')}}" method="POST">
-                    @csrf
-                    <div class="popupform">
-                    <div>
-                        <label for="">Name</label>
-                        <input name="name" type="text" class="inputpopup" placeholder=" Enter member name">
-                        @error('name')
-                          <div class="error">{{ $message }}</div>
-                        @enderror
-                        <label for="">Phone number</label>
-                        <input name="phone" type="tel" class="inputpopup" placeholder=" Enter phone number">
-                        @error('phone')
-                          <div class="error">{{ $message }}</div>
-                        @enderror
-                        <label for="">Email</label>
-                        <input name="email" type="mail" class="inputpopup" placeholder=" Enter email">
-                        @error('email')
-                          <div class="error">{{ $message }}</div>
-                        @enderror  
-                        <div id="list1" class="dropdown-check-list" tabindex="100">
-                          <span class="anchor">plan</span>
-                          <ul class="items">
-                            @foreach ($plans as $plan)
-                            <li><input name="plans[]" value="{{$plan->id}}" type="checkbox" /> {{$plan->plan_Name}}</li>
 
-                            @endforeach
-                          
-                          </ul>
-                        </div>              
-                                        
-                    </div>
-                    <div>
-                      <label for="">Date Enrolled</label>
-                        <input name="date_of_join" type="date" class="inputpopup" placeholder=" Enter date">
-                        @error('date_of_join')
-                          <div class="error">{{ $message }}</div>
-                        @enderror
-                        <label for="">Expiration date</label>
-                        <input name="expiration_date" type="date" class="inputpopup" placeholder=" Enter date">
-                        @error('expiration_date')
-                          <div class="error">{{ $message }}</div>
-                        @enderror
-                        <label for="">Password</label>
-                        <input name="password" type="password" class="inputpopup" >
-                        @error('password')
-                          <div class="error">{{ $message }}</div>
-                        @enderror
-                        
-                        
-                        
-                        <div style=" margin-top: 20px; text-align: right;">
-                          <button class="edit-btn">Add Member</button>
-                          <a href="{{route('admin.members.index')}}" class="butformcancel" id="close">cancel</a>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
                         </div>
-                    </div>
-                </div>
+                        <!-- Add members-->
+                        <div class="popupmm" style="{{ $errors->any() ? 'visibility:visible;' : 'visibility:hidden;' }}">
+                            <div class="popup-cuntentmm">
+                                <h4>Add Member</h4>
+                                <form action="{{ route('admin.add_member.store') }}" method="POST">
+                                    @csrf
+                                    <div class="popupform">
+                                        <div>
+                                            <label for="">Name</label>
+                                            <input name="name" type="text" class="inputpopup"
+                                                placeholder=" Enter member name">
+                                            @error('name')
+                                                <div class="error">{{ $message }}</div>
+                                            @enderror
+                                            <label for="">Phone number</label>
+                                            <input name="phone" type="tel" class="inputpopup"
+                                                placeholder=" Enter phone number">
+                                            @error('phone')
+                                                <div class="error">{{ $message }}</div>
+                                            @enderror
+                                            <label for="">Email</label>
+                                            <input name="email" type="mail" class="inputpopup"
+                                                placeholder=" Enter email">
+                                            @error('email')
+                                                <div class="error">{{ $message }}</div>
+                                            @enderror
+                                            <div id="list1" class="dropdown-check-list" tabindex="100">
+                                                <span class="anchor">plan</span>
+                                                <ul class="items">
+                                                    @foreach ($plans as $plan)
+                                                        <li><input name="plans[]" value="{{ $plan->id }}"
+                                                                type="checkbox" /> {{ $plan->plan_Name }}</li>
+                                                    @endforeach
+
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                        <div>
+                                            <label for="">Date Enrolled</label>
+                                            <input name="date_of_join" type="date" class="inputpopup"
+                                                placeholder=" Enter date">
+                                            @error('date_of_join')
+                                                <div class="error">{{ $message }}</div>
+                                            @enderror
+                                            <label for="">Expiration date</label>
+                                            <input name="expiration_date" type="date" class="inputpopup"
+                                                placeholder=" Enter date">
+                                            @error('expiration_date')
+                                                <div class="error">{{ $message }}</div>
+                                            @enderror
+                                            <label for="">Password</label>
+                                            <input name="password" type="password" class="inputpopup">
+                                            @error('password')
+                                                <div class="error">{{ $message }}</div>
+                                            @enderror
+
+
+
+                                            <div style=" margin-top: 20px; text-align: right;">
+                                                <button class="edit-btn">Add Member</button>
+                                                <a href="{{ route('admin.members.index') }}" class="butformcancel"
+                                                    id="close">cancel</a>
+                                            </div>
+                                        </div>
+                                    </div>
 
 
 

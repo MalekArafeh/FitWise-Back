@@ -9,10 +9,10 @@
 @section('content')
     <!-- Main content -->
     <div class="content">
-        <div class="container-fluid">
-            <div class="row justify-content-center">
+        <div class="container-fluid d-flex justify-content-center ">
+            <div class="row justify-content-center w-100">
                 <!-- Profile Card -->
-                <div class="col-md-6 col-lg-5">
+                <div class="col-md-10 col-lg-8">
                     <div class="card card-primary card-outline">
                         <div class="card-body box-profile">
                             <div class="text-center">
@@ -90,40 +90,6 @@
                             </div>
                             <button type="button" data-toggle="modal" data-target="#editProfileModal"
                                 class="btn btn-block btn-warning">Update</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Password Change Card -->
-                <div class="col-md-6 col-lg-5">
-                    <div class="card card-default">
-                        <div class="card-header">
-                            <h3 class="card-title">Change Password</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"
-                                    aria-label="Collapse password form">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label for="currentPassword">Current Password</label>
-                                <input type="password" class="form-control" id="currentPassword"
-                                    placeholder="Current Password" required minlength="6">
-                            </div>
-                            <div class="form-group">
-                                <label for="newPassword">New Password</label>
-                                <input type="password" class="form-control" id="newPassword" placeholder="New Password"
-                                    required minlength="6">
-                            </div>
-                            <div class="form-group">
-                                <label for="confirmPassword">Re-type New Password</label>
-                                <input type="password" class="form-control" id="confirmPassword"
-                                    placeholder="Confirm Password" required minlength="6">
-                            </div>
-                            <button type="button" class="btn btn-block btn-warning">Change</button>
-                            <button type="reset" class="btn btn-block btn-default">Clear</button>
                         </div>
                     </div>
                 </div>

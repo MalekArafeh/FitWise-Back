@@ -1,5 +1,5 @@
 function busynessIndicator(maxCapacity) {
-  fetch("/data/people_count.json").then((response) =>
+  fetch("/storage/data/people_count.json").then((response) =>
     response
       .json()
       .then((data) => {

@@ -23,7 +23,7 @@ class AdminLoginController extends Controller
             $request->session()->regenerate();
             return redirect()->intended(route("admin.dashboard.index"));
         }
-        return redirect(route("admin.login"))
+        return redirect(route("admin.login.index"))
             ->withErrors(["Wrong credentials error", "Login failed"]);
     }
 

@@ -63,6 +63,11 @@ Route::delete('/admin/classes/{id}', [classesController::class, 'destroy'])->nam
 
 // dashboard: 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard.index');
+Route::get('/admin/dashboard/sub', [DashboardController::class, 'sub'])->name('admin.dashboard.sub');
+Route::get('/admin/dashboard/status', [DashboardController::class, 'status'])->name('admin.dashboard.status');
+Route::put('admin/dashboard/status/update', [DashboardController::class, 'update'])->name('admin.dashboard.status.update');
+Route::post('/process-number', [DashboardController::class, 'processNumber'])->name('process.number');
+
 
 
 

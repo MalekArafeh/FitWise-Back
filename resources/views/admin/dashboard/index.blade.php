@@ -11,6 +11,68 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>{{ $totalMembers }}</h3>
+                            <p>All Members</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a href="{{ route('admin.members.index') }}" class="small-box-footer">More info <i
+                                class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>{{ $expiringSubscriptionsCount }}</h3>
+                            <p>Expiring Subscriptions</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="{{ route('admin.dashboard.sub') }}" class="small-box-footer">More info <i
+                                class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>{{ $totalCoaches }}</h3>
+                            <p>Coaches Number</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="{{ route('admin.coaches.index') }}" class="small-box-footer">More info <i
+                                class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>{{ $current_members }}<sup style="font-size: 20px"></sup></h3>
+                            <p>Gym Status</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+                        <a href="{{ route('admin.dashboard.status') }}" class="small-box-footer">More info <i
+                                class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+            <div class="row">
                 <div class="col-lg-6">
                     <div class="card" style="background-color: 46554F">
                         <div class="card-header">
@@ -42,9 +104,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @php
-                                        $counter = 1; // Initialize counter
-                                    @endphp
                                     @foreach ($classes as $class)
                                         <tr>
                                             <td class="yazan">{{ $class->Name }}</td>
@@ -58,11 +117,10 @@
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
-
                     <div class="card" style="background-color: 46554F">
                         <div class="card-header">
-                            <a href="{{ route('admin.members.index') }}">
-                                <h3 class="card-title">Gym Members</h3>
+                            <a href="{{ route('admin.dashboard.sub') }}">
+                                <h3 class="card-title">Expiring Subscriptions</h3>
                             </a>
                             <div class="card-tools">
                                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -81,7 +139,7 @@
                             <table class="table table-hover text-nowrap">
                                 <thead>
                                     <tr>
-                                        <td>picture</td>
+                                        <td><b>picture</b></td>
                                         <th>Name</th>
                                         <th>phone</th>
                                         <th>Date Enrolled</th>
@@ -89,25 +147,30 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @php
-                                        $counter = 1; // Initialize counter
-                                    @endphp
-                                    @foreach ($gym_members as $member)
+                                    @if ($gym_members->isEmpty())
                                         <tr>
-                                            <td><img src={{ url('admin\dist\img\yazan.jpg') }}
-                                                    class="img-circle elevation-2" alt="User Image"></td>
-                                            <td>{{ $member->name }}</td>
-                                            <td>{{ $member->phone }}</td>
-                                            <td>{{ $member->date_of_join }}</td>
-                                            <td>{{ $member->expiration_date }}</td>
+                                            <td colspan="5" class="text-center">No subscriptions nearing expiration.
+                                            </td>
                                         </tr>
-                                    @endforeach
+                                    @else
+                                        @foreach ($gym_members as $member)
+                                            <tr>
+                                                <td><img src={{ $member->picture ? asset('storage/' . $member->picture) : asset('img/profile.jpg') }}
+                                                        class="img-circle elevation-2" alt="User Image"></td>
+                                                <td>{{ $member->name }}</td>
+                                                <td>{{ $member->phone }}</td>
+                                                <td>{{ $member->date_of_join }}</td>
+                                                <td>{{ $member->expiration_date }}</td>
+                                            </tr>
+                                        @endforeach
+                                    @endif
                                 </tbody>
                             </table>
                         </div>
                         <!-- /.card-body -->
                     </div>
                     <!-- /.card -->
+
                 </div>
                 <!-- /.col-md-6 -->
                 <div class="col-lg-6">
@@ -178,14 +241,13 @@
                             <table class="table table-hover text-nowrap">
                                 <thead>
                                     <tr>
-                                        <td>Picture</td>
-                                        <th>Coach Id</th>
+                                        <td>
+                                            <b>Picture</b>
+                                        </td>
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Phone</th>
                                         <th>availability</th>
-                                        <th>Actions</th>
-
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -193,34 +255,13 @@
                                         <tr>
                                             <td><img src={{ url('admin\dist\img\yazan.jpg') }}
                                                     class="img-circle elevation-2" alt="User Image"></td>
-                                            <td>{{ $counter }}</td>
                                             <td>{{ $coach->Name }}</td>
                                             <td>{{ $coach->Email }}</td>
 
                                             <td>{{ $coach->Phone }}</td>
                                             <td>{{ $coach->availability }}</td>
-                                            <td><a class="edit-btn" id="3"
-                                                    href="{{ route('admin.coaches.edit', $coach->id) }}">Edit</a>
-                                                <form style="display:inline;"
-                                                    action="{{ route('admin.coaches.destroy', $coach->id) }}"
-                                                    method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="edit-btn1"><svg
-                                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                            fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                                            <path
-                                                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
-                                                            <path
-                                                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z" />
-                                                        </svg></button>
 
-                                                </form>
-                                            </td>
                                         </tr>
-                                        @php
-                                            $counter++; // Increment counter
-                                        @endphp
                                     @endforeach
 
 
