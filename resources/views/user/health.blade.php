@@ -66,15 +66,10 @@
     </div>
 </div>
 
-
-
-
-  
-
-    
+<div class="col-md-5 col-10 center-block"><h2 class="mt-5">Weight Tracker for 30 Days</h2>
+<canvas id="weightChart" width="400" height="200"></canvas></div>
     <!--Tabs-->
-    
-    
+
     <!--menu-->
     <div class="row margin-bottom">
       <div class="col-md-2 center-menu">
@@ -89,20 +84,23 @@
           <a onclick="showCalc(event, 'prtnCalc')" class="text no-link option"
             >Protein Calculator <span class="icon mg"></span></a
           >
-
-   
-
-
-
-
-
-
-
-
         </div>
        
       </div>
-
+      <div class="hide-on-lg">
+        <div class="tabs">
+          <button
+            id="defaultTab"
+            onclick="showCalc(event, 'calsCalc')"
+            class="btn text option"
+          >
+            Calories
+          </button>
+          <button onclick="showCalc(event, 'prtnCalc')" class="btn text option">
+            Protein
+          </button>
+        </div>
+      </div>
       <!--first calc-->
       <div id="prtnCalc" class="col-md-5 col-10 center-block calc">
         <div class="blk-text content">
@@ -148,7 +146,7 @@
           </button>
         </div>
       </div>
-      <div id="protein" class="col-md-2 center-menu">
+      <div id="protein" class="col-md-2 col-10 center-menu">
         <div class="gradient-border">
         <span
           >Your Daily Protein Needs Are Set! 💪 <br>
@@ -160,9 +158,6 @@
 
       <!--Second calculator-->
       <div id="calsCalc" class="col-md-5 col-10 center-block calc">
-         <h2 class="mt-5">Weight Tracker for 30 Days</h2>
-        <canvas id="weightChart" width="400" height="200"></canvas>
-        
         <div class="blk-text content">
         
           <h3>Find Your Optimal Calorie Intake</h3>
@@ -177,18 +172,6 @@
           </p>
         </div>
         <div class="hide-on-lg">
-      <div class="tabs">
-        <button
-          id="defaultTab"
-          onclick="showCalc(event, 'calsCalc')"
-          class="btn text option"
-        >
-          Calories
-        </button>
-        <button onclick="showCalc(event, 'prtnCalc')" class="btn text option">
-          Protein
-        </button>
-      </div>
     </div>
         <div class="radial calculator">
           <p class="headings blk-text vertical-margin">Calories Calculator</p>
@@ -223,7 +206,7 @@
     <canvas id="weightChart" width="400" height="200"></canvas> --}}
       </div>
       
-      <div id="calories"  class="col-md-2 center-menu">
+      <div id="calories"  class="col-md-2 col-10 center-menu">
         <div class="gradient-border">
           <span
             >Here’s Your Daily Calorie Target! 🌟 <br>

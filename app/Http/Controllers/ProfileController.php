@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Validator;
 use App\Models\GymMember;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Http\Request;
 
@@ -58,5 +59,27 @@ class ProfileController extends Controller
 
         // إعادة التوجيه إلى الصفحة مع رسالة نجاح
         return redirect()->back()->with('success', 'Profile updated successfully!');
+    }
+
+
+
+    public function reset(Request $request, $id)
+    {        
+
+        $validator = Validator::make($request->all(), [
+            'password' => ['required', 'string', 'min:8', 'max:255', 'confirmed'], // 'password_confirmation' is checked automatically
+            'confirmation' => ['required', 'same:password'], // Optional additional validation
+        ]);
+        $gym_member = GymMember::findOrFail($id);
+
+        $gym_member->password=Hash::make($request->password);
+        $gym_member->save();
+        if($request->password==$request->confirmation)
+            return redirect()->back()->with('success', 'Password updated successfully.');
+        else
+             return redirect()->back()->with('error', 'Password updated failed.');
+
+
+        
     }
 }
