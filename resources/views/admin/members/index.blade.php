@@ -14,8 +14,24 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="button-importplus">
-                                <button class="edit-btn">Import</button>
-                                <button class="edit-btn" id="popupmembers">+</button>
+                                {{--  --}}
+                               @if(session('status'))
+                               <div class="alert alert-success">{{session('status')}}</div>
+                                   @endif
+                                <div class="card-body">
+                                    <form action="{{route('importExcelData')}}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="input-group">
+                                            <input type="file" name="import-file" class="form-control">
+                                            <button type="submit" class="edit-btn" style="margin-left: 3px">Import</button>
+                                            <button class="edit-btn" id="popupmembers" style="margin-left: 3px">+</button>
+                                        </div>
+                                        </form>
+                                </div>
+
+
+                                {{-- <button class="edit-btn">Import</button>
+                                <button class="edit-btn" id="popupmembers">+</button> --}}
                             </div>
 
                             <div class="card" style="background-color: 46554F">
