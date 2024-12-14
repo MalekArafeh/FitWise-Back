@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\GymMember;
 use App\Models\Plan;
 use App\Models\Trainer;
-use App\Models\classes;
+use App\Models\Classes;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
@@ -14,8 +15,9 @@ use Illuminate\Support\Facades\File;
 
 class DashboardController extends Controller
 {
-    
-    public function index() {
+
+    public function index()
+    {
         $contents = File::get(storage_path('app/public/data/people_count.json'));
         $json = json_decode(json: $contents, associative: true);
         $count = $json['count'];
@@ -34,16 +36,17 @@ class DashboardController extends Controller
 
         $allplans = Plan::all();
         $allTrainer = Trainer::all();
-        $allclasses =classes::with('trainers')->get();
-        return view("admin.dashboard.index", ['gym_members' => $members,
+        $allclasses = classes::with('trainers')->get();
+        return view("admin.dashboard.index", [
+            'gym_members' => $members,
             'plans' => $allplans,
             'coaches' => $allTrainer,
             'classes' => $allclasses,
             'totalMembers' => $totalMembers,
             'expiringSubscriptionsCount' => $expiringSubscriptionsCount,
             'totalCoaches' => $totalCoaches,
-            'current_members'=>$count,
-        ]); 
+            'current_members' => $count,
+        ]);
     }
 
     public function sub()
@@ -74,17 +77,17 @@ class DashboardController extends Controller
         $jsonFilePath = storage_path('app/public/data/people_count.json');
 
         $data = [];
-    if (file_exists($jsonFilePath)) {
-        $data = json_decode(file_get_contents($jsonFilePath), true);
-    }
+        if (file_exists($jsonFilePath)) {
+            $data = json_decode(file_get_contents($jsonFilePath), true);
+        }
 
-    $data['count'] = $validated['current_members'];
+        $data['count'] = $validated['current_members'];
 
-    file_put_contents($jsonFilePath, json_encode($data, JSON_PRETTY_PRINT));
+        file_put_contents($jsonFilePath, json_encode($data, JSON_PRETTY_PRINT));
 
 
         $members = GymMember::all();
-        return view('admin.dashboard.status', ['gym_members' => $members, 'current_members'=>$data]);
+        return view('admin.dashboard.status', ['gym_members' => $members, 'current_members' => $data]);
     }
 
 
@@ -93,12 +96,12 @@ class DashboardController extends Controller
 
 
 
-//     public function processNumber(Request $request)
-// {
-//     $number = $request->input('number');
+    //     public function processNumber(Request $request)
+    // {
+    //     $number = $request->input('number');
 
-//     // Pass the number to another view or perform any logic
-//     return view('user.home', compact('number'));
-// }
+    //     // Pass the number to another view or perform any logic
+    //     return view('user.home', compact('number'));
+    // }
 
 }

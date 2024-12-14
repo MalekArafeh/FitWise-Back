@@ -40,8 +40,8 @@
                         <tr>
                             <th>ID plan</th>
                             <th>Name</th>
-                            <th>time</th>
-                            <th>price</th>
+                            <th>Time</th>
+                            <th>Price</th>
                             <th>Description</th>                       
                             <th>Actions</th>    
                         </tr>

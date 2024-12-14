@@ -57,8 +57,8 @@
                                                     <td>{{ $counter }}</td>
                                                     <td class="yazan">{{ $class->Name }}</td>
                                                     <td>{{ $class->trainers->first()->Name }}</td>
-                                                    <td>{{ $class->Time }}</td>
-                                                    <td>{{ $class->Date }}</td>
+                                                    <td>{{ $class->date }}</td>
+                                                    <td>{{ $class->start_time}}</td>
 
                                                     <td><a class="edit-btn" id="3"
                                                             href="{{ route('admin.classes.edit', $class->id) }}">Edit</a>

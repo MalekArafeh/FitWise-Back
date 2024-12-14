@@ -40,12 +40,12 @@
                                     <table class="table table-hover text-nowrap">
                                         <thead>
                                             <tr>
-                                                <td>Picture</td>
+                                                <th>Picture</th>
                                                 <th>Coach Id</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
                                                 <th>Phone</th>
-                                                <th>availability</th>
+                                                <th>Availability</th>
                                                 <th>Actions</th>
 
                                             </tr>
@@ -99,7 +99,7 @@
                             <!-- /.card -->
                         </div>
                         <!-- Add members-->
-                        <div class="popupmm" >
+                        <div class="popupmm" style="{{ $errors->any() ? 'visibility:visible;' : 'visibility:hidden;' }}">
                             <div class="popup-cuntentmm">
                                 <h4>Add Coach</h4>
                                 <form action="{{ route('admin.add_coaches.store') }}" method="POST">
@@ -139,7 +139,7 @@
                         @enderror
                                             <div style=" margin-top: 20px; text-align: right;">
                                                 <button class="edit-btn">Add Coach</button>
-                                                <a href="admin.coaches.index" class="butformcancel" id="close">cancel</a>
+                                                <a href="{{route('admin.coaches.index')}}" class="butformcancel" id="close">cancel</a>
                                             </div>
                                         </div>
                                     </div>

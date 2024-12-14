@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\classes;
+use App\Models\Classes;
 use App\Models\Trainer;
 use Illuminate\Http\Request;
 

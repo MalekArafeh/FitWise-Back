@@ -56,10 +56,10 @@
                                     <table class="table table-hover text-nowrap">
                                         <thead>
                                             <tr>
-                                                <td>picture</td>
+                                                <th>Picture</th>
                                                 <th>Member Id</th>
                                                 <th>Name</th>
-                                                <th>phone</th>
+                                                <th>Phone</th>
                                                 <th>Date Enrolled</th>
                                                 <th>Date Expiration</th>
                                                 <th>Actions</th>

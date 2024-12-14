@@ -100,7 +100,7 @@
                                         <th> Name</th>
                                         <th>Coach</th>
                                         <th>Date</th>
-                                        <th> Time </th>
+                                        <th> Start time </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -108,8 +108,8 @@
                                         <tr>
                                             <td class="yazan">{{ $class->Name }}</td>
                                             <td>{{ $class->trainers->first()->Name }}</td>
-                                            <td>{{ $class->Time }}</td>
-                                            <td>{{ $class->Date }}</td>
+                                            <td>{{ $class->date }}</td>
+                                            <td>{{ $class->start_time }}</td>
                                     @endforeach
                                 </tbody>
                             </table>
@@ -139,9 +139,9 @@
                             <table class="table table-hover text-nowrap">
                                 <thead>
                                     <tr>
-                                        <td><b>picture</b></td>
+                                        <th><b>Picture</b></th>
                                         <th>Name</th>
-                                        <th>phone</th>
+                                        <th>Phone</th>
                                         <th>Date Enrolled</th>
                                         <th>Date Expiration</th>
                                     </tr>
@@ -197,8 +197,8 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
-                                        <th>time</th>
-                                        <th>price</th>
+                                        <th>Time</th>
+                                        <th>Price</th>
                                         <th>Description</th>
                                     </tr>
                                 </thead>
@@ -210,7 +210,7 @@
                                         <tr>
                                             <td>{{ $plan->plan_Name }}</td>
                                             <td>{{ $plan->plan_Period }}</td>
-                                            <td> $ {{ $plan->plan_Price }}</td>
+                                            <td>JOD.{{ $plan->plan_Price }}</td>
                                             <td>{{ $plan->plan_Description }}</td>
                                     @endforeach
                                 </tbody>
@@ -247,7 +247,7 @@
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Phone</th>
-                                        <th>availability</th>
+                                        <th>Availability</th>
                                     </tr>
                                 </thead>
                                 <tbody>
