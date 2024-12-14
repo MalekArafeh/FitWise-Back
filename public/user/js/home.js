@@ -7,6 +7,7 @@ function busynessIndicator(maxCapacity) {
         let currentCount = data.count;
         let percentage = (currentCount / maxCapacity) * 100;
         busynessClass.style.width = `${percentage}%`;
+        document.getElementById("percent").innerText = percentage + "% full";
         const icon = document.querySelector(".status-icon");
         if (percentage >= 0 && percentage < 33) {
           icon.style.color = "#c9e983";

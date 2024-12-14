@@ -1,6 +1,6 @@
 <!--Nav bar layout-->
 
-<header>
+<header class="sticky">
     <svg class="svg-bg" viewBox="0 0 500 200">
       <path
         d="M 0 50 C 150 100 350 0 500 40 L 500 0 L 0 0 Z"

@@ -15,7 +15,7 @@
     <br />
     <div class="full bar">
       <div class="busyness bar"></div> 
-    </div>
+    </div><span id="percent"></span>
   </section>
   <br />
   <section class="margin-top">
